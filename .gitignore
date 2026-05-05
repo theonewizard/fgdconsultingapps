@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# Claude Code lokal session-state (deles ikke)
+.claude/sessions/
+.claude/cache/
+
+# Vedhæftede filer i inbokse (kan være store / private)
+Min Inbox/attachments/
+Team Inbox/attachments/
+
+# Logs / midlertidigt
+*.log
+tmp/
