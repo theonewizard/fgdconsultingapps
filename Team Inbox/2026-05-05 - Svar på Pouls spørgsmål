@@ -1,0 +1,34 @@
+| # | Spørgsmål | Hvorfor det betyder noget |
+|---|---|---|
+| 1 | Hvor mange txt-noter har du, og er de struktureret i mapper? | Mappe-struktur kan mappes 1-1 til notebooks |
+| 2 | Hvor mange kunder forventes i de første 6 mdr? | Påvirker plan-valg på Vercel/Neon/Clerk |
+| 3 | Skal kunder kunne self-signup via invite-link, eller opretter du dem manuelt? | Påvirker invite-flow design |
+| 4 | Brug for "subteam" pr. kunde (3 personer hos samme kunde)? | Afgør om vi skal have organisations-koncept i v1 |
+| 5 | Domæne: `app.fgdconsulting.se` ok, eller noget andet? | Påvirker Clerk + CORS allow-list |
+| 6 | AI-budget pr. måned (cap)? | Sætter loft i Anthropic-konsol + Inngest concurrency |
+| 7 | Skal kunder kunne opt-out af AI-berigelse pr. notebook? (GDPR) | Påvirker datamodel (flag på notebooks) |
+| 8 | Region: Frankfurt ok? (Neon har ikke nordisk endnu) | Lavest latens fra DK/SE er Frankfurt |
+| 9 | Eksisterende OpenAI/Anthropic-konti vi skal bruge, eller opretter Camilla nye? | Konto- og fakturerings-spor |
+| 10 | Versions-historik: alle ændringer eller kun manuelle snapshots? | Påvirker storage-volumen i `note_versions` |
+
+Hej Stefan,
+
+1. Jeg har måske omkring 100-200 txt-noter, og de er ikke struktureret i mapper. De er spredt ud over forskellige projekter og emner, så det ville være fantastisk at kunne organisere dem i notebooks.
+
+2. Jeg forventer at have omkring 3-5 kunder i de første 6 måneder. Det er vigtigt for mig er fortrolighed og integritet i håndteringen af kundedata, så jeg vil gerne sikre, at vi vælger en løsning, der kan håndtere dette på en sikker måde.
+
+3. Jeg foretrækker at oprette kunder manuelt for at sikre, at jeg har kontrol over, hvem der får adgang til platformen. Det vil også give mig mulighed for at tilpasse onboarding-processen for hver kunde.
+
+4. Ja, det ville være nyttigt at have et "subteam" koncept, så jeg kan tildele flere personer fra samme kunde til deres respektive notebooks og projekter.
+
+5. `docs.fgdconsulting.se` lyder perfekt for mig. Det vil give et professionelt udseende og være let for mine kunder at huske.
+
+6. Jeg vil gerne sætte et AI-budget på omkring 500 DKK pr. måned for at starte med. Det er vigtigt for mig at have kontrol over omkostningerne, især i de tidlige faser.
+
+7. Ja, det ville være godt at have muligheden for at opt-out af AI-berigelse pr. notebook for at overholde GDPR og give mine kunder valgmuligheder.
+
+8. Frankfurt-regionen er helt fint for mig. Det er vigtigt for mig at sikre, at mine kunder i Danmark og Sverige får en god oplevelse med lav latens og at data er sikkert opbevaret samt krypteret.
+
+9. Camilla kan her i prototypen bruge mine eksisterende OpenAI- og Anthropic-konti. Vi kan altid oprette nye konti senere, hvis det bliver nødvendigt.
+
+10. Jeg vil gerne have versions-historik for alle ændringer, ikke kun manuelle snapshots. Det vil give mig mulighed for at spore udviklingen af mine noter og gendanne tidligere versioner, hvis det bliver nødvendigt.
