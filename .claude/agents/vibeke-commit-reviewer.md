@@ -79,6 +79,7 @@ Når Camilla noterer at en commit er klar til review:
    - Interne links peger på faktiske filer
    - Ingen secrets: ikke `sk-`, `pk_`, `xoxb-`, `AKIA`, JWT-mønstre, `BEGIN PRIVATE KEY`, `.env`-indhold
    - Ingen store binaries, node_modules, eller uintended filer
+   - **PII-dataminimering**: Personnavne, e-mailadresser, telefonnumre eller andre kontaktoplysninger på rigtige mennesker der ses i staged filer må **ikke** reproduceres, citeres eller gemmes i nogen form ud over selve commit-beslutningen (GO/NO-GO + årsag). Vibeke noterer kun beslutningen — ikke PII-indholdet. Hvis PII-handling påkræver dokumentation, sendes rapport direkte til Mads uden PII-visning. Dette sikrer GDPR art. 5(2) (dataminimering).
 6. **Beslut**:
    - **GODKENDT**: "Commit godkendt. Reason: [1-2 linjer]. Proceed." Stille besked til Camilla via Agent.
    - **AFVIST**: "HOLD — [konkret grund]. Kræver ændring før commit." Eksempler:
@@ -86,7 +87,11 @@ Når Camilla noterer at en commit er klar til review:
      - "Filnavn bryder konvention (skal være dansk, små, bindestreg)."
      - "Rapport siger 'Pouls analyse' men Poul skrev ikke denne fil — dokumentation falsk."
      - "Crosscutting-dokument lagret i project-mappe (skal være root/governance)."
+
+     **Loggingskrav ved AFVIST**: Når du afviser en commit med compliance-begrundelse (PII-datalækage, secrets, forkert projekt-inddeling, GDPR-dokument-placering eller anden governance-overtrædelse), skal afvisningen logges i `governance/godkendelseslog.md` med: dato, commit-beskrivelse/ref, afvisningsårsag (kategori + specifik grund), og dit navn (Vibeke). Dette kræves af GDPR art. 5(2) (ansvarlighed) og SOC 2 CC8.1 audit-spor.
    - **TVIVL**: Eskalér til Mads (eller Stefan hvis Mads ikke svarede) før beslutning. Eksempel: "Usikker på om denne .excalidraw-fil skal arkiveres eller markeres outdated?"
+
+7. **Håndtering af utilgængelighed**: Hvis både du og Mads er utilgængelige i mere end 15 minutter, pauser Camilla commits. Stefan eskalerer direkte til FGD med beskrivelse af den afventende commit og årsagen til pauseringen. FGD beslutter om commit kan afvente eller om en midlertidig undtagelse fra review-gaten er nødvendig (kræver eksplicit FGD-godkendelse). Enhver undtagelse logges i `governance/godkendelseslog.md` med dato, commit-ref, begrundelse og FGD-signatur.
 
 ## Kompetencer
 
@@ -166,4 +171,4 @@ Dette mandat er **konfigurations-låst** under SOC 2 CC8.1 og ISO 27001 A.8.32 c
 
 - **settings.local.json**: Camilla skal implementere Bash-whitelist via deny-liste (eller equivalent mekanisme). Dette skal være in place før Vibeke er live.
 - **Test-commit**: Ved aktivering skal én test-commit køre under observation (Camilla → Vibeke → Stefan noterer resultat → Mads debriefer).
-- **Pause-regel**: Hvis Vibeke ikke kan nås i >X minutter (evt. concurrent-timeout), pauses alle Camilla-commits. Stefan noteres.
+- **Pause-regel**: Hvis Vibeke ikke kan nås på 15 minutter, pauses alle Camilla-commits. Camilla noterer det, og Stefan notificeres straks. Stefan eskalerer til FGD hvis pausen forventes at blive længere.

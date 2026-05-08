@@ -28,3 +28,27 @@ Format pr. entry:
 - **Reviewer 2**: Dorthe (DPO) — CONDITIONAL GO; fund indarbejdet (DPO-routing art. 38(3) rettet, dataminimering tilføjet, memory-forbud mod persondata om rigtige mennesker)
 - **FGD GO**: "Ja jeg godkender Stefans rolle beskrivelse og mandat" — FGD, 2026-05-08
 - **Logget af**: Camilla
+
+## 2026-05-08 — Camilla bibliotekar v2 mandat
+
+- **Beslutning**: Camilla v2-mandat aktiveret (`.claude/agents/camilla-bibliotekar.md` opdateret)
+- **Reviewer 1**: Mads (CISO) — GO
+- **Reviewer 2**: Poul (analytiker, substitueret for Camilla pga. SOD) — GO efter stavefejl + minor rettet
+- **FGD GO**: "godkendt" — FGD, 2026-05-08
+- **Logget af**: Camilla
+
+## 2026-05-08 — Vibeke commit-reviewer mandat
+
+- **Beslutning**: Vibeke aktiveret som permanent commit-gate (`.claude/agents/vibeke-commit-reviewer.md`)
+- **Reviewer 1**: Mads (CISO) — GO
+- **Reviewer 2**: Dorthe (DPO) — GO
+- **FGD GO**: "godkendt" — FGD, 2026-05-08
+- **Logget af**: Camilla
+
+## 2026-05-08 — Trine compliance-auditor mandat
+
+- **Beslutning**: Trine aktiveret som permanent compliance-auditor (`.claude/agents/trine-compliance-auditor.md`)
+- **Reviewer 1**: Mads (CISO) — GO efter rapporteringslinje + 4-eyes scorecard rettet
+- **Reviewer 2**: Dorthe (DPO) — GO efter arbejdsgang-inkonsistens rettet
+- **FGD GO**: "godkendt" — FGD, 2026-05-08
+- **Logget af**: Camilla
