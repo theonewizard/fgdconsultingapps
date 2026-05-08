@@ -13,6 +13,14 @@ Format pr. entry:
 
 ---
 
+## 2026-05-08 — Dorthe DPO mandat
+
+- **Beslutning**: Dorthe DPO mandat godkendt og aktiveret som permanent rolle (`.claude/agents/dorthe-dpo.md`)
+- **Reviewer 1**: Mads (CISO) — CONDITIONAL GO; 6 fund indarbejdet
+- **Reviewer 2**: Poul (analytiker, substitueret for Dorthe pga. SOD-konflikt) — CONDITIONAL GO; 5 fund indarbejdet
+- **FGD GO**: "Ja og noter samtidigt at naar jeg godkender skal filen fjernes fra min inbox." — FGD, 2026-05-08
+- **Logget af**: Camilla
+
 ## 2026-05-08 — Stefan-organisator mandat
 
 - **Beslutning**: Stefan-organisator mandat godkendt og aktiveret som permanent rolle (`.claude/agents/stefan-organisator.md`)
