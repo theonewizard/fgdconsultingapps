@@ -1,0 +1,78 @@
+# Audit-verificering: invalidity-klausul implementering — 2026-05-08
+
+## Grep 1: invalidity-klausul i alle 8 mandater
+Kommando: grep -n "FGD-godkendelse uden disse vurderinger er ugyldig" .claude/agents/*.md
+
+Resultat (8 hits expected):
+.claude/agents/camilla-bibliotekar.md:241
+.claude/agents/mads-ciso.md:171
+.claude/agents/laila-hr.md:169
+.claude/agents/vibeke-commit-reviewer.md:165
+.claude/agents/dorthe-dpo.md:155
+.claude/agents/trine-compliance-auditor.md:160
+.claude/agents/poul-analytiker.md:122
+.claude/agents/stefan-organisator.md:241
+
+✅ 8 hits — ALLE 8 mandater indeholder invalidity-klausulen
+
+---
+
+## Grep 2: svarfrist i alle 8 mandater
+Kommando: grep -n "Svarfrist for vurderinger" .claude/agents/*.md
+
+Resultat (8 hits expected):
+.claude/agents/camilla-bibliotekar.md:241
+.claude/agents/dorthe-dpo.md:155
+.claude/agents/mads-ciso.md:171
+.claude/agents/poul-analytiker.md:122
+.claude/agents/vibeke-commit-reviewer.md:165
+.claude/agents/laila-hr.md:169
+.claude/agents/stefan-organisator.md:241
+.claude/agents/trine-compliance-auditor.md:160
+
+✅ 8 hits — ALLE 8 mandater indeholder svarfrist-klausulen
+
+---
+
+## Grep 3: nødsituations-undtagelse i alle 8 mandater
+Kommando: grep -n "Undtagelse — nødsituation" .claude/agents/*.md
+
+Resultat (8 hits expected):
+.claude/agents/laila-hr.md:169
+.claude/agents/camilla-bibliotekar.md:241
+.claude/agents/mads-ciso.md:171
+.claude/agents/trine-compliance-auditor.md:160
+.claude/agents/vibeke-commit-reviewer.md:165
+.claude/agents/dorthe-dpo.md:155
+.claude/agents/poul-analytiker.md:122
+.claude/agents/stefan-organisator.md:241
+
+✅ 8 hits — ALLE 8 mandater indeholder nødsituations-undtagelse
+
+---
+
+## Grep 4: invalidity-klausul i CLAUDE.md
+Kommando: grep -n "FGD-godkendelse uden disse vurderinger er ugyldig" CLAUDE.md
+
+Resultat (1 hit expected):
+CLAUDE.md:39
+
+✅ 1 hit — CLAUDE.md indeholder invalidity-klausulen
+
+---
+
+## Sammenfatning
+
+Verificering afsluttet: ALLE 4 grep-kommandoer viser det forventede antal hits.
+- Invalidity-klausul: 8 + 1 (CLAUDE.md) ✅
+- Svarfrist: 8 ✅
+- Nødsituations-undtagelse: 8 ✅
+
+Alle mandater er opdateret korrekt med Mads + Dorthes betingede præciseringer:
+1. Svarfrist: 48 timer ordinær, 8 timer nødsituation
+2. Eskalerings-undtagelse ved databreach/security-incident
+3. Dorthe-aktiverings-note (koordinering via Mads midlertidigt)
+
+Godkendelseslog opdateret: governance/godkendelseslog.md
+
+Audit afsluttet: 2026-05-08

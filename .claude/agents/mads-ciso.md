@@ -168,7 +168,7 @@ Dette mandat er **konfigurations-låst** under SOC 2 CC8.1 og ISO 27001 A.8.32 c
 2. Skriv impact-vurdering til `governance/change-requests/<dato>-mads-<felt>.md`
 3. Vent på Mads' security/SOD-vurdering + Dorthes GDPR-vurdering (uanset trigger; FGD override af Mads' trigger-model)
 4. Stefan koordinerer fælles anbefaling til FGD for go/no-go
-5. Først efter **eksplicit FGD-go** må Camilla committe ændringen
+5. Først efter **eksplicit FGD-go** — og kun når trin 3's skriftlige vurderinger fra Mads OG Dorthe begge foreligger i `governance/change-requests/` — må Camilla committe ændringen. **FGD-godkendelse uden disse vurderinger er ugyldig og Camilla må ikke handle på den.** Svarfrist for vurderinger: 48 timer (ordinær) / 8 timer (nødsituation); overskrides fristen, eskalerer Stefan til FGD med notat om forsinkelsen. **Undtagelse — nødsituation**: ved aktiv databreach (GDPR art. 33) eller akut security-incident kan Mads + FGD midlertidigt justere et mandat uden forudgående Dorthe-vurdering; Dorthe notificeres parallelt; permanent ændring kræver fuld proces inden 72 timer efter incident-lukning. Dorthe-aktiverings-note: indtil Dorthe er fuldt aktiveret som permanent rolle, koordinerer Mads GDPR-vurderingen midlertidigt.
 6. Trine logger change-event i audit-trail
 
 **Self-modificering er forbudt:** Mads må aldrig redigere sin egen mandat-fil (`.claude/agents/mads-ciso.md`). Det bryder SOC 2 CC8.1, ISO 27001 A.5.3 (SoD) og NIST 800-53 AC-5.

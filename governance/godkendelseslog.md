@@ -52,3 +52,12 @@ Format pr. entry:
 - **Reviewer 2**: Dorthe (DPO) — GO efter arbejdsgang-inkonsistens rettet
 - **FGD GO**: "godkendt" — FGD, 2026-05-08
 - **Logget af**: Camilla
+
+## 2026-05-08 — Governance-tightening: invalidity-klausul + Hard Rule 8
+
+- **Beslutning**: FGD-godkendelse af mandat-ændringer ugyldig uden Mads + Dorthe skriftlig vurdering — invalidity-klausul tilføjet til CLAUDE.md og alle 8 permanent-mandate. Hard Rule 8 (README.md-vedligehold) formaliseret i Camilla-mandat.
+- **Reviewer 1**: Mads (CISO) — GO med to betingede præciseringer (eskalerings-undtagelse kryds-reference, Dorthe-aktiverings-note), begge inkorporeret
+- **Reviewer 2**: Dorthe (DPO) — CONDITIONAL GO med betingelser (svarfrist, nødsituations-undtagelse), begge inkorporeret
+- **FGD GO**: "Ja — FGD-godkendelse af mandat-ændringer er ugyldig uden begge vurderinger foreligger i governance/change-requests/. Camilla må ikke committe på baggrund af en GO der mangler Mads+Dorthe dokumentation. Svarfristen og nødsituations-undtagelse skal være klar." — FGD, 2026-05-08
+- **Berørte filer**: `.claude/agents/stefan-organisator.md`, `.claude/agents/camilla-bibliotekar.md`, `.claude/agents/laila-hr.md`, `.claude/agents/poul-analytiker.md`, `.claude/agents/mads-ciso.md`, `.claude/agents/dorthe-dpo.md`, `.claude/agents/trine-compliance-auditor.md`, `.claude/agents/vibeke-commit-reviewer.md`, `CLAUDE.md`
+- **Logget af**: Camilla
