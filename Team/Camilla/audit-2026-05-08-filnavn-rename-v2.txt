@@ -1,0 +1,50 @@
+Filnavn-omdøbning: vidensapp → knowlagecentral
+Audit-rapport — 2026-05-08 (supplement til v1)
+
+SCOPE:
+======
+
+Denne rapport dokumenterer den 2. runde filnavn-omdøbning, hvor alle historiske
+daterede dokumenter får "knowlagecentral" i stedet for "vidensapp" som prefix.
+
+FILNAVNE OMDØBT (git mv):
+=========================
+
+Team/Poul/:
+  ✓ 2026-05-05-vidensapp-analyse-v3.md → 2026-05-05-knowlagecentral-analyse-v3.md
+  ✓ 2026-05-05-vidensapp-arkitektur.drawio → 2026-05-05-knowlagecentral-arkitektur.drawio
+  ✓ 2026-05-05-vidensapp-arkitektur.excalidraw → 2026-05-05-knowlagecentral-arkitektur.excalidraw
+  ✓ 2026-05-05-vidensapp-arkitektur.excalidraw.NOTE.md → 2026-05-05-knowlagecentral-arkitektur.excalidraw.NOTE.md
+  ✓ 2026-05-05-vidensapp-arkitektur.pdf → 2026-05-05-knowlagecentral-arkitektur.pdf
+  ✓ 2026-05-05-vidensapp-udvidelser-vurdering.md → 2026-05-05-knowlagecentral-udvidelser-vurdering.md
+
+Team Inbox/projects/knowlagecentral/:
+  ✓ 2026-05-05-vidensapp-evernote-style.md → 2026-05-05-knowlagecentral-evernote-style.md
+
+FILER OPDATERET — INDHOLDSREFERENCER:
+======================================
+
+README.md:
+  ✓ Linje 87: link til vidensapp-analyse-v3.md → knowlagecentral-analyse-v3.md
+
+VERIFICERING:
+=============
+
+Kommando: grep -rn "vidensapp" <repo> --include="*.md" --exclude-dir=arkiv --exclude-dir=worktrees
+Resultat: 0 hits i aktive filer
+
+Kommando: find . -name "*vidensapp*" | grep -v .git | grep -v worktrees | grep -v arkiv
+Resultat: 0 resultater
+
+STATUS:
+=======
+
+✅ ALLE 7 FILNAVNE OMDØBT
+✅ ALLE REFERENCER OPDATERET
+✅ AUDIT-CLEAN
+
+Git-status (før commit):
+- R (rename): 7 filer
+- M (modify): 1 fil (README.md)
+
+Næste: git add + commit

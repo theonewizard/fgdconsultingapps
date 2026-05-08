@@ -84,6 +84,6 @@ Se [Team/_konventioner.md](Team/_konventioner.md) for fuldt inbox-flow, eskaleri
 > Knowlagecentral giver konsulenter og deres kunder et sikkert, AI-beriget noteværktøj — fra råt tekstindhold til struktureret viden, bygget til de brancher der ikke kan gå på kompromis med sikkerhed.
 
 Nøgle-dokumenter:
-- Arkitektur: [Team/Poul/2026-05-05-vidensapp-analyse-v3.md](Team/Poul/2026-05-05-vidensapp-analyse-v3.md)
+- Arkitektur: [Team/Poul/2026-05-05-knowlagecentral-analyse-v3.md](Team/Poul/2026-05-05-knowlagecentral-analyse-v3.md)
 - Compliance: [governance/compliance/](governance/compliance/)
 - Governance-policies: [governance/policies/](governance/policies/)
