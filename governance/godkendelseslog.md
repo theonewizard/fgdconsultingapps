@@ -13,6 +13,17 @@ Format pr. entry:
 
 ---
 
+## 2026-05-09 — Aktivering af Application Owner + Application Provider projekt-roller
+
+- **Beslutning**: Aktivering af to nye projekt-roller for applikationsudvikling i Knowlagecentral:
+  - `.claude/agents/application-owner.md` (sonnet)
+  - `.claude/agents/application-provider.md` (opus)
+- **Reviewer 1**: Mads (CISO) — 4-eyes: CONDITIONAL GO; final-check: GO (5 blokerende rettelser indarbejdet i v2)
+- **Reviewer 2**: Dorthe (DPO) — 4-eyes: CONDITIONAL GO; final-check: GO (8+6 hard rules indarbejdet i v2)
+- **Udkast-spor**: Laila v1 → v2 (10 blokerende rettelser indarbejdet samlet på tværs af Mads + Dorthe)
+- **FGD GO**: "ja" — FGD, 2026-05-09
+- **Logget af**: Camilla
+
 ## 2026-05-08 — Dorthe DPO mandat
 
 - **Beslutning**: Dorthe DPO mandat godkendt og aktiveret som permanent rolle (`.claude/agents/dorthe-dpo.md`)
