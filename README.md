@@ -81,6 +81,8 @@ Se [Team/_konventioner.md](Team/_konventioner.md) for fuldt inbox-flow, eskaleri
 
 **Vidensapp** — en Evernote-inspireret videns-app med AI-pipeline, HSM-baseret key management og enterprise compliance-krav (FIPS 140-3, SOC 2 Type II, GDPR).
 
+> Vidensappen giver konsulenter og deres kunder et sikkert, AI-beriget noteværktøj — fra råt tekstindhold til struktureret viden, bygget til de brancher der ikke kan gå på kompromis med sikkerhed.
+
 Nøgle-dokumenter:
 - Arkitektur: [Team/Poul/2026-05-05-vidensapp-analyse-v3.md](Team/Poul/2026-05-05-vidensapp-analyse-v3.md)
 - Compliance: [governance/compliance/](governance/compliance/)
