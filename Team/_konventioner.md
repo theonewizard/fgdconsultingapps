@@ -23,12 +23,12 @@ Disse konventioner gælder for alle roller i FGD-teamet (Stefan + alle .claude/a
 ├── Min Inbox/
 │   ├── _crosscutting/                      ← permanente rolle-leverancer + crosscutting-rapporter
 │   ├── projects/
-│   │   └── vidensapp/                      ← project-specifik inbox (teamet → FGD pr. projekt)
+│   │   └── knowlagecentral/                      ← project-specifik inbox (teamet → FGD pr. projekt)
 │   └── .gitkeep
 ├── Team Inbox/
 │   ├── _crosscutting/                      ← godkendte permanente rolle-mandater
 │   ├── projects/
-│   │   └── vidensapp/                      ← project-specifik inbox (FGD → teamet pr. projekt)
+│   │   └── knowlagecentral/                      ← project-specifik inbox (FGD → teamet pr. projekt)
 │   └── .gitkeep
 ├── Team/                                   ← rollernes arbejdsmapper
 │   ├── Camilla/                            ← fast rolle (project-uafhængig)
@@ -36,7 +36,7 @@ Disse konventioner gælder for alle roller i FGD-teamet (Stefan + alle .claude/a
 │   ├── Mads/                               ← fast rolle (project-uafhængig)
 │   ├── Poul/                               ← fast rolle (project-uafhængig, crosscutting analyser)
 │   ├── projects/
-│   │   └── vidensapp/                      ← project-specifikke arbejdsmapper
+│   │   └── knowlagecentral/                      ← project-specifikke arbejdsmapper
 │   │       ├── Sofie/                      ← project-rolle: frontend
 │   │       ├── Henrik/                     ← project-rolle: backend
 │   │       ├── Anders/                     ← project-rolle: AI-pipeline
@@ -51,14 +51,14 @@ Disse konventioner gælder for alle roller i FGD-teamet (Stefan + alle .claude/a
     ├── _crosscutting/                      ← arkiverede crosscutting-dokumenter
     ├── Min Inbox/
     └── projects/
-        └── vidensapp/
+        └── knowlagecentral/
             ├── Min Inbox/
             └── Team/Poul/
 ```
 
 ### Project-niveau
 
-**Aktive projekter**: `projects/<projektname>/` (fx `projects/vidensapp/`)
+**Aktive projekter**: `projects/<projektname>/` (fx `projects/knowlagecentral/`)
 
 **Faste roller** (Stefan, Laila, Poul, Camilla, Mads) forbliver på rod-niveau under `Team/` uden project-scope — de tjener på tværs af alle projekter.
 
@@ -166,8 +166,8 @@ Dokumenter i denne workspace falder i to kategorier:
 - **Ansvar**: opdateres når underliggende beslutninger eller fakta ændrer sig
 - **Trigger**: når FGD træffer ny beslutning eller facts ændres, beder Stefan eksplicit Camilla opdatere dokumentet + alle afhængige dokumenter
 - **Eksempler**:
-  - `Team/Poul/2026-05-05-vidensapp-analyse-v3.md` (master arkitektur)
-  - `Min Inbox/projects/vidensapp/2026-05-05-fgd-aktive-udestaaender.md` (FGD's TODO)
+  - `Team/Poul/2026-05-05-knowlagecentral-analyse-v3.md` (master arkitektur)
+  - `Min Inbox/projects/knowlagecentral/2026-05-05-fgd-aktive-udestaaender.md` (FGD's TODO)
   - `Team/_konventioner.md` (denne fil)
   - `.claude/agents/*.md` (rolle-mandater)
   - Memory-filer i `~/.claude/projects/.../memory/`
@@ -191,18 +191,18 @@ Dokumenter i denne workspace falder i to kategorier:
 
 ### Eksempel: arkivering med flytning til arkiv/
 
-Fil oprindelig på: `Team/Poul/2026-05-05-vidensapp-analyse.md` (v1)
-Flyttes til: `arkiv/Team/Poul/2026-05-05-vidensapp-analyse.md`
+Fil oprindelig på: `Team/Poul/2026-05-05-knowlagecentral-analyse.md` (v1)
+Flyttes til: `arkiv/Team/Poul/2026-05-05-knowlagecentral-analyse.md`
 
 ```yaml
 ---
 status: arkiveret
-afløst-af: Team/Poul/2026-05-05-vidensapp-analyse-v3.md
+afløst-af: Team/Poul/2026-05-05-knowlagecentral-analyse-v3.md
 arkiveret-dato: 2026-05-05
-arkiveret-fra: Team/Poul/2026-05-05-vidensapp-analyse.md
+arkiveret-fra: Team/Poul/2026-05-05-knowlagecentral-analyse.md
 ---
 
-> **⚠ Dette dokument er arkiveret pr. 2026-05-05. Master er [v3-analysen](../../../Team/Poul/2026-05-05-vidensapp-analyse-v3.md). Vedligeholdes ikke.**
+> **⚠ Dette dokument er arkiveret pr. 2026-05-05. Master er [v3-analysen](../../../Team/Poul/2026-05-05-knowlagecentral-analyse-v3.md). Vedligeholdes ikke.**
 
 # Analyse...
 ```
@@ -229,10 +229,10 @@ memory/
 │   ├── dokument-vedligeholds-governance.md
 │   └── (roller som Mads som gælder hele organisationen)
 └── projects/
-    └── vidensapp/                     ← vidensapp-projekt-specifik info
-        ├── vidensapp-projekt-2026-05-05.md
+    └── knowlagecentral/                     ← knowlagecentral-projekt-specifik info
+        ├── knowlagecentral-projekt-2026-05-05.md
         ├── hsm-fips-140-produktionsmål-2026-05-05.md
-        └── (andre vidensapp-filer)
+        └── (andre knowlagecentral-filer)
 ```
 
 ### Filstruktur
@@ -244,21 +244,21 @@ Hver memory-fil har frontmatter:
 name: {{kort navn}}
 description: {{én linje — bruges til relevans-vurdering}}
 type: user | feedback | project | reference
-project: crosscutting | vidensapp | andet-projekt-navn
+project: crosscutting | knowlagecentral | andet-projekt-navn
 ---
 ```
 
 - **`type: feedback`** — FGD-korrektioner og bekræftede arbejdsmønstre. Inkludér **Why** og **How to apply**.
-- **`type: project`** — vidensapp-projektet: beslutninger, deadlines, motivationer.
+- **`type: project`** — knowlagecentral-projektet: beslutninger, deadlines, motivationer.
 - **`type: reference`** — pointers til eksterne systemer (Linear, Slack, dashboards).
 - **`type: user`** — info om FGD selv (rolle, præferencer).
 - **`project: crosscutting`** — gælder alle projekter.
-- **`project: vidensapp`** — kun vidensapp-kontekst.
+- **`project: knowlagecentral`** — kun knowlagecentral-kontekst.
 
 ### Organisering
 
 - **Crosscutting** = info der gælder hele FGD-teamet (feedback, konventioner, permanente roller, governance-principper).
-- **Project-specifik** = kun relevant for ét projekt (vidensapp arkitektur, kunde-vertikaler, roller som Karen/Bjarne).
+- **Project-specifik** = kun relevant for ét projekt (knowlagecentral arkitektur, kunde-vertikaler, roller som Karen/Bjarne).
 
 ### Vedligehold
 

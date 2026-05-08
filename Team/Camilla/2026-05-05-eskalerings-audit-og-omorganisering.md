@@ -34,15 +34,15 @@ Alle med `.gitkeep` for version-control.
 
 | Fra | Til | Type | Grund |
 |---|---|---|---|
-| `Min Inbox/projects/vidensapp/2026-05-05-vibeke-commit-reviewer-mandat.md` | `Min Inbox/_crosscutting/2026-05-05-vibeke-commit-reviewer-mandat.md` | Mandat | Vibeke = permanent rolle, ej project-specifik |
-| `Min Inbox/projects/vidensapp/2026-05-05-laila-rapport-vibeke.md` | `Min Inbox/_crosscutting/2026-05-05-laila-rapport-vibeke.md` | Rapport | Samme |
-| `Team Inbox/projects/vidensapp/2026-05-05-mads-ciso-mandat.md` | `Team Inbox/_crosscutting/2026-05-05-mads-ciso-mandat.md` | Mandat | Mads = permanent rolle (CISO) |
-| `Min Inbox/projects/vidensapp/2026-05-05-laila-rapport-mads-ciso.md` | `Min Inbox/_crosscutting/2026-05-05-laila-rapport-mads-ciso.md` | Rapport | Samme |
-| `Min Inbox/projects/vidensapp/2026-05-05-laila-rapport-mads-justeringer.md` | `Min Inbox/_crosscutting/2026-05-05-laila-rapport-mads-justeringer.md` | Rapport | Samme |
+| `Min Inbox/projects/knowlagecentral/2026-05-05-vibeke-commit-reviewer-mandat.md` | `Min Inbox/_crosscutting/2026-05-05-vibeke-commit-reviewer-mandat.md` | Mandat | Vibeke = permanent rolle, ej project-specifik |
+| `Min Inbox/projects/knowlagecentral/2026-05-05-laila-rapport-vibeke.md` | `Min Inbox/_crosscutting/2026-05-05-laila-rapport-vibeke.md` | Rapport | Samme |
+| `Team Inbox/projects/knowlagecentral/2026-05-05-mads-ciso-mandat.md` | `Team Inbox/_crosscutting/2026-05-05-mads-ciso-mandat.md` | Mandat | Mads = permanent rolle (CISO) |
+| `Min Inbox/projects/knowlagecentral/2026-05-05-laila-rapport-mads-ciso.md` | `Min Inbox/_crosscutting/2026-05-05-laila-rapport-mads-ciso.md` | Rapport | Samme |
+| `Min Inbox/projects/knowlagecentral/2026-05-05-laila-rapport-mads-justeringer.md` | `Min Inbox/_crosscutting/2026-05-05-laila-rapport-mads-justeringer.md` | Rapport | Samme |
 
 **Filnavn-validering**: Alle små bogstaver, bindestreg-separeret, ISO-dato — konvention OK.
 
-**Interne links**: Vibeke + Mads-mandater indeholder relative links. Efter flytning fra `projects/vidensapp/` til `_crosscutting/`, skal jeg tjekke om links er brudt:
+**Interne links**: Vibeke + Mads-mandater indeholder relative links. Efter flytning fra `projects/knowlagecentral/` til `_crosscutting/`, skal jeg tjekke om links er brudt:
 - Vibeke-mandat refererer til `.claude/agents/*`, `Team/_konventioner.md` — disse er nu længere væk. Skal verificeres.
 - Mads-mandat refererer til `Team/Poul/`, `governance/` — disse er længere væk. Skal verificeres.
 
@@ -65,14 +65,14 @@ grep -rn "eskaler.*Poul\|Poul.*sikkerh\|Poul.*security\|Poul.*compliance\|sikker
 
 | Fil | Linje | Før | Efter | Grund |
 |---|---|---|---|---|
-| `Min Inbox/projects/vidensapp/2026-05-05-henrik-backend-mandat.md` | 89 | "Eskalér compliance-tvivl til Poul (analyse)" | "Eskalér compliance-tvivl til Mads (CISO)" | Henrik er backend; sikkerhed → Mads, ikke Poul |
-| `Min Inbox/projects/vidensapp/2026-05-05-laila-rapport-3-roller.md` | 50 | "eskalerer sikkerhed-tvivl til → Poul (analyse)" | "eskalerer sikkerhed-tvivl til → Mads (CISO)" | Rolle-rapport; alle 3 (Sofie, Henrik, Anders) eskalerer sikkerhed til Mads |
-| `Min Inbox/projects/vidensapp/2026-05-05-laila-rapport-karen-bjarne.md` | 35 | "Eskalering \| Poul (compliance-dybde)" | "Eskalering \| Mads (CISO), evt. via Poul ved research" | Karen eskalerer sikkerhed til Mads først |
-| `Min Inbox/projects/vidensapp/2026-05-05-laila-rapport-karen-bjarne.md` | 171 | "Karen kan eskalere til Poul hvis FIPS-compliance kræver lovpræsentation" | "Karen eskalerer til Mads ved compliance-spørgsmål; Mads kan kalde Poul ved behov" | Samme |
-| `Min Inbox/projects/vidensapp/2026-05-05-karen-security.md` | 26 | "kan hun eskalere til Poul" (compliance) | "eskalerer hun til Mads (CISO), som kan kalde Poul ved behov" | Samme mønstre 4 steder |
-| `Min Inbox/projects/vidensapp/2026-05-05-karen-security.md` | 76 | "Eskalerer til Poul ved kompleks compliance-analyse" | "Eskalerer til Mads ved compliance-spørgsmål. Eskalerer til Poul (via Mads) ved version-check..." | Opdelt compliance vs. research |
-| `Min Inbox/projects/vidensapp/2026-05-05-karen-security.md` | 120 | Hand-off-matrice: "Poul (analytiker) \| Hvis compliance-dybde" | "Poul (analytiker) \| Hvis research-dybde eller version-tjek" | Forskel på compliance (→ Mads) vs. research (→ Poul direkte eller via Mads) |
-| `Min Inbox/projects/vidensapp/2026-05-05-karen-security.md` | 163 | "Karen kalder Poul (via Agent) for compliance-dybde-dyk" | "Karen rapporterer compliance til Mads; kan kalde Poul direkte for research/version-tjek" | Samme |
+| `Min Inbox/projects/knowlagecentral/2026-05-05-henrik-backend-mandat.md` | 89 | "Eskalér compliance-tvivl til Poul (analyse)" | "Eskalér compliance-tvivl til Mads (CISO)" | Henrik er backend; sikkerhed → Mads, ikke Poul |
+| `Min Inbox/projects/knowlagecentral/2026-05-05-laila-rapport-3-roller.md` | 50 | "eskalerer sikkerhed-tvivl til → Poul (analyse)" | "eskalerer sikkerhed-tvivl til → Mads (CISO)" | Rolle-rapport; alle 3 (Sofie, Henrik, Anders) eskalerer sikkerhed til Mads |
+| `Min Inbox/projects/knowlagecentral/2026-05-05-laila-rapport-karen-bjarne.md` | 35 | "Eskalering \| Poul (compliance-dybde)" | "Eskalering \| Mads (CISO), evt. via Poul ved research" | Karen eskalerer sikkerhed til Mads først |
+| `Min Inbox/projects/knowlagecentral/2026-05-05-laila-rapport-karen-bjarne.md` | 171 | "Karen kan eskalere til Poul hvis FIPS-compliance kræver lovpræsentation" | "Karen eskalerer til Mads ved compliance-spørgsmål; Mads kan kalde Poul ved behov" | Samme |
+| `Min Inbox/projects/knowlagecentral/2026-05-05-karen-security.md` | 26 | "kan hun eskalere til Poul" (compliance) | "eskalerer hun til Mads (CISO), som kan kalde Poul ved behov" | Samme mønstre 4 steder |
+| `Min Inbox/projects/knowlagecentral/2026-05-05-karen-security.md` | 76 | "Eskalerer til Poul ved kompleks compliance-analyse" | "Eskalerer til Mads ved compliance-spørgsmål. Eskalerer til Poul (via Mads) ved version-check..." | Opdelt compliance vs. research |
+| `Min Inbox/projects/knowlagecentral/2026-05-05-karen-security.md` | 120 | Hand-off-matrice: "Poul (analytiker) \| Hvis compliance-dybde" | "Poul (analytiker) \| Hvis research-dybde eller version-tjek" | Forskel på compliance (→ Mads) vs. research (→ Poul direkte eller via Mads) |
+| `Min Inbox/projects/knowlagecentral/2026-05-05-karen-security.md` | 163 | "Karen kalder Poul (via Agent) for compliance-dybde-dyk" | "Karen rapporterer compliance til Mads; kan kalde Poul direkte for research/version-tjek" | Samme |
 
 ### Tvivlstilfælde (ingen ændring nødvendig)
 

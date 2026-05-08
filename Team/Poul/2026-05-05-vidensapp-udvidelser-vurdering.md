@@ -3,14 +3,14 @@ dato: 2026-05-05
 forfatter: Poul
 emne: Vurdering af 6 udvidelser (shadcn skills, Refero, GetDesign.md, Vercel MCP, Next.js MCP, Vercel skills)
 status: leveret
-relateret-analyse: Team/Poul/2026-05-05-vidensapp-analyse-v2.md
+relateret-analyse: arkiv/Team/Poul/2026-05-05-knowlagecentral-analyse-v2.md
 ---
 
 # Evaluering: 6 potentielle udvidelses-ressourcer
 
 ## Sammenfatning
 
-Denne rapport evaluerer 6 kandidat-ressourcer til vidensapp-projektet og anbefaler hvilke der skal aktiveres i MVP vs. senere faser. Formål: maksimale værdi per setup-time + minimum vendor-afhængighed.
+Denne rapport evaluerer 6 kandidat-ressourcer til knowlagecentral-projektet og anbefaler hvilke der skal aktiveres i MVP vs. senere faser. Formål: maksimale værdi per setup-time + minimum vendor-afhængighed.
 
 ---
 

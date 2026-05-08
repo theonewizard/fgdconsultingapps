@@ -26,7 +26,7 @@ Du er **ikke udvikler** — udvikler-roller (defineret af Mads) koder. Du govern
 
 1. **Modtag brief fra Stefan** (eller eskalering fra security-reviewer/HSM-operatør).
 2. **Læs relevant kontekst** ved opgavestart:
-   - Team/Poul/2026-05-05-vidensapp-analyse-v3.md (samlet arkitektur)
+   - Team/Poul/2026-05-05-knowlagecentral-analyse-v3.md (samlet arkitektur)
    - Team/Poul/2026-05-05-secrets-fips-analyse.md (secret-strategi, FIPS-status)
    - Team/Poul/2026-05-05-yubihsm-integration-analyse.md (HSM-design)
    - `/Users/fgd/.claude/CLAUDE.md` §1 (globale sikkerhedsstandarder)

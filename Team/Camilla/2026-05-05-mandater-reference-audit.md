@@ -29,8 +29,8 @@ Audit af 14 mandater + Lailas rapporter, Dorthe/Trine flyttet fra project til _c
 ## Flytninger — Dorthe & Trine
 
 ✅ Moved successfully via `git mv`:
-- `Min Inbox/projects/vidensapp/2026-05-05-dorthe-dpo.md` → `Min Inbox/_crosscutting/2026-05-05-dorthe-dpo.md`
-- `Min Inbox/projects/vidensapp/2026-05-05-trine-compliance-auditor.md` → `Min Inbox/_crosscutting/2026-05-05-trine-compliance-auditor.md`
+- `Min Inbox/projects/knowlagecentral/2026-05-05-dorthe-dpo.md` → `Min Inbox/_crosscutting/2026-05-05-dorthe-dpo.md`
+- `Min Inbox/projects/knowlagecentral/2026-05-05-trine-compliance-auditor.md` → `Min Inbox/_crosscutting/2026-05-05-trine-compliance-auditor.md`
 
 Status: Staged (A = added), gamle stier ikke længere tilgængelige. ✓
 
@@ -63,7 +63,7 @@ Status: Staged (A = added), gamle stier ikke længere tilgængelige. ✓
 
 #### 4. mads-ciso.md
 - **Filsti-references**: 3 indre krydsreferencer:
-  - Team/Poul/2026-05-05-vidensapp-analyse-v3.md ✅
+  - Team/Poul/2026-05-05-knowlagecentral-analyse-v3.md ✅
   - Team/Poul/2026-05-05-secrets-fips-analyse.md ✅
   - Team/Poul/2026-05-05-yubihsm-integration-analyse.md ✅
 - **Rolle-referencer**: Stefan, Poul, Laila, Karen, Bjarne, Henrik/Sofie/Anders, Camilla, Dorthe (ikke nævnt i Mads-mandat, korrekt — hun er uafhængig), Trine
@@ -103,11 +103,11 @@ Status: Staged (A = added), gamle stier ikke længere tilgængelige. ✓
 
 ---
 
-### Project-mandater (vidensapp/)
+### Project-mandater (knowlagecentral/)
 
 #### 8. sofie-frontend-mandat.md
 - **Filsti-references**: 1
-  - **Linje 78**: `team/Poul/2026-05-05-vidensapp-analyse-v3.md`
+  - **Linje 78**: `team/Poul/2026-05-05-knowlagecentral-analyse-v3.md`
   - **Fejl**: Lille 't' i 'team' (skal være 'Team')
   - **FIX**: ✅ RETTET — `Team/Poul/...`
 - **Rolle-referencer**: Henrik, Camilla, Stefan, Poul (indirekte via v3-analyse), Mads (Speed Insights audit-trail)
@@ -117,7 +117,7 @@ Status: Staged (A = added), gamle stier ikke længere tilgængelige. ✓
 
 #### 9. henrik-backend-mandat.md
 - **Filsti-references**: 1
-  - **Linje 75**: `Team/Poul/2026-05-05-vidensapp-analyse-v3.md` ✅
+  - **Linje 75**: `Team/Poul/2026-05-05-knowlagecentral-analyse-v3.md` ✅
 - **Rolle-referencer**: Sofie, Anders, Camilla, Stefan, Poul, Karen, Mads (migrations)
 - **Eskalering**: ✅ Henrik → Stefan/Mads (compliance-tvivl); Henrik ← Karen (code-review), Camilla (migration-executor)
 - **Frontmatter**: ✅ Korrekt (sonnet, read/write/edit/glob/grep/bash/todowrite/agent, green)
@@ -125,7 +125,7 @@ Status: Staged (A = added), gamle stier ikke længere tilgængelige. ✓
 
 #### 10. anders-ai-pipeline-mandat.md
 - **Filsti-references**: 1
-  - **Linje 71**: `Team/Poul/2026-05-05-vidensapp-analyse-v3.md` ✅
+  - **Linje 71**: `Team/Poul/2026-05-05-knowlagecentral-analyse-v3.md` ✅
 - **Rolle-referencer**: Henrik, Sofie, Camilla, Stefan, Trine, Karen, FGD (budget-oversight)
 - **Eskalering**: ✅ Anders → Stefan; Anders ← Karen (ZDR, prompt-safety), Trine (audit-evidens)
 - **Frontmatter**: ✅ Korrekt (sonnet, read/write/edit/glob/grep/bash/todowrite/agent, orange)
@@ -135,7 +135,7 @@ Status: Staged (A = added), gamle stier ikke længere tilgængelige. ✓
 - **Filsti-references**: 3
   - **Linje 59**: `Team/Poul/2026-05-05-secrets-fips-analyse.md` ✅
   - **Linje 60**: `Team/Poul/2026-05-05-yubihsm-integration-analyse.md` ✅
-  - **Linje 61**: `Team/Poul/2026-05-05-vidensapp-analyse-v3.md` ✅
+  - **Linje 61**: `Team/Poul/2026-05-05-knowlagecentral-analyse-v3.md` ✅
   - **Linje 62**: `/Users/fgd/.claude/CLAUDE.md` ✅
 - **Rolle-referencer**: Stefan, Henrik, Anders, Sofie, Bjarne, Camilla, Dorthe, Trine, Mads, Poul
 - **Eskalering**: ✅ Karen → Mads (compliance); Karen ↔ Poul (research/version-check, kan direkte)
@@ -313,7 +313,7 @@ Under uafhængig `grep -roh` for brudte markdown-links fandt jeg:
 | --- | --- | --- | --- |
 | `_crosscutting/dokument-vedligeholds-governance.md` | Team/Camilla/2026-05-05-memory-strategi.md | MISSING | Denne fil er i memory-mappen, ikke i repo-rod. Ref-fejl i min memory-strategi-fil. Defer til separat commit. |
 | `_crosscutting/feedback_version_verification.md` | Team/Camilla/2026-05-05-memory-strategi.md | MISSING | Samme problem — memory-fil refereret som repo-fil. Defer. |
-| `Min Inbox/projects/vidensapp/2026-05-05-laila-rapport-mads-ciso.md` | Min Inbox/projects/vidensapp/2026-05-05-fgd-aktive-udestaaender.md | EXISTS (nu i `_crosscutting/`) | Allerede rettet af Mads runde 1+2 updates |
+| `Min Inbox/projects/knowlagecentral/2026-05-05-laila-rapport-mads-ciso.md` | Min Inbox/projects/knowlagecentral/2026-05-05-fgd-aktive-udestaaender.md | EXISTS (nu i `_crosscutting/`) | Allerede rettet af Mads runde 1+2 updates |
 
 **Læring**: Memory-strategi-filen mit egent arbejde refererer til memory-mappen som hvis det var repo-filer. Dette er meta-organizational debt som skal adresseres senere. For nu: disse refs er ikke kritiske for commit-gating, da de ikke påvirker mandater eller governance-policies.
 
@@ -344,10 +344,10 @@ Vibeke-mandatet blev læst og dens read-only constraints verificeret (Bash-white
 **Filer i staging**:
 - Min Inbox/_crosscutting/2026-05-05-dorthe-dpo.md (A)
 - Min Inbox/_crosscutting/2026-05-05-trine-compliance-auditor.md (A)
-- Min Inbox/projects/vidensapp/2026-05-05-sofie-frontend-mandat.md (M — filsti-fix)
+- Min Inbox/projects/knowlagecentral/2026-05-05-sofie-frontend-mandat.md (M — filsti-fix)
 
 **Filer til Mads-review**:
-- Min Inbox/projects/vidensapp/2026-05-05-laila-rapport-karen-bjarne.md (stavefejl-tvivl)
+- Min Inbox/projects/knowlagecentral/2026-05-05-laila-rapport-karen-bjarne.md (stavefejl-tvivl)
 
 ---
 

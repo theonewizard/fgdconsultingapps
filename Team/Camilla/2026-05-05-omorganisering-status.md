@@ -10,16 +10,16 @@ status: færdig
 
 ### 1. Mapper oprettet ✓
 ```
-Min Inbox/projects/vidensapp/
-Team Inbox/projects/vidensapp/
-arkiv/projects/vidensapp/Min Inbox/
-arkiv/projects/vidensapp/Team/Poul/
+Min Inbox/projects/knowlagecentral/
+Team Inbox/projects/knowlagecentral/
+arkiv/projects/knowlagecentral/Min Inbox/
+arkiv/projects/knowlagecentral/Team/Poul/
 .gitkeep sat i Min Inbox/ og Team Inbox/ top-level
 ```
 
 ### 2. Filer flyttet (git mv + mv)
 
-**Min Inbox/ → projects/vidensapp/** (14 filer)
+**Min Inbox/ → projects/knowlagecentral/** (14 filer)
 - 2026-05-05-anders-ai-pipeline-mandat.md
 - 2026-05-05-bjarne-hsm-operator.md
 - 2026-05-05-dorthe-dpo.md
@@ -35,28 +35,28 @@ arkiv/projects/vidensapp/Team/Poul/
 - 2026-05-05-team-bootstrappet.md
 - 2026-05-05-trine-compliance-auditor.md
 
-**Team Inbox/ → projects/vidensapp/** (3 filer)
+**Team Inbox/ → projects/knowlagecentral/** (3 filer)
 - 2026-05-05-mads-ciso-mandat.md
 - 2026-05-05 - Svar på Pouls spørgsmål
-- 2026-05-05-vidensapp-evernote-style.md
+- 2026-05-05-knowlagecentral-evernote-style.md
 
 **arkiv/** — via `git mv` (3 filer + 1 fra Min Inbox)
-- Team/Poul/2026-05-05-vidensapp-analyse.md → arkiv/projects/vidensapp/Team/Poul/
-- Team/Poul/2026-05-05-vidensapp-analyse-v2.md → arkiv/projects/vidensapp/Team/Poul/
-- Min Inbox/2026-05-05-vidensapp-pouls-analyse.md → arkiv/projects/vidensapp/Min Inbox/
+- Team/Poul/2026-05-05-knowlagecentral-analyse.md → arkiv/projects/knowlagecentral/Team/Poul/
+- Team/Poul/2026-05-05-knowlagecentral-analyse-v2.md → arkiv/projects/knowlagecentral/Team/Poul/
+- Min Inbox/2026-05-05-knowlagecentral-pouls-analyse.md → arkiv/projects/knowlagecentral/Min Inbox/
 
 **Samlede**: 20 filer flyttet.
 
 ### 3. Interne links opdateret ✓
 
 **Filer indeholdt refs til gamle stier:**
-- `Team/Poul/2026-05-05-vidensapp-analyse-v3.md` (3 refs) ✓ Opdateret
-- `Team Inbox/projects/vidensapp/2026-05-05-mads-ciso-mandat.md` (1 ref) ✓ Opdateret
-- `Min Inbox/projects/vidensapp/2026-05-05-laila-rapport-3-roller.md` (3 refs) ✓ Opdateret
-- `Min Inbox/projects/vidensapp/2026-05-05-laila-rapport-karen-bjarne.md` (2 refs) ✓ Opdateret
-- `Min Inbox/projects/vidensapp/2026-05-05-laila-rapport-mads-ciso.md` (2 refs) ✓ Opdateret
-- `Min Inbox/projects/vidensapp/2026-05-05-laila-rapport-mads-justeringer.md` (6 refs) ✓ Opdateret
-- `Min Inbox/projects/vidensapp/2026-05-05-fgd-aktive-udestaaender.md` (11 refs) ✓ Opdateret
+- `Team/Poul/2026-05-05-knowlagecentral-analyse-v3.md` (3 refs) ✓ Opdateret
+- `Team Inbox/projects/knowlagecentral/2026-05-05-mads-ciso-mandat.md` (1 ref) ✓ Opdateret
+- `Min Inbox/projects/knowlagecentral/2026-05-05-laila-rapport-3-roller.md` (3 refs) ✓ Opdateret
+- `Min Inbox/projects/knowlagecentral/2026-05-05-laila-rapport-karen-bjarne.md` (2 refs) ✓ Opdateret
+- `Min Inbox/projects/knowlagecentral/2026-05-05-laila-rapport-mads-ciso.md` (2 refs) ✓ Opdateret
+- `Min Inbox/projects/knowlagecentral/2026-05-05-laila-rapport-mads-justeringer.md` (6 refs) ✓ Opdateret
+- `Min Inbox/projects/knowlagecentral/2026-05-05-fgd-aktive-udestaaender.md` (11 refs) ✓ Opdateret
 - `Team/_konventioner.md` (1 ref) ✓ Opdateret
 
 **Total links opdateret**: ~28
@@ -81,9 +81,9 @@ Ingen ændringer på agent-filerne pga. omorganisering. Tidligere modifikatione 
 
 ```
 git status --short:
-- 14 filer tilføjet under Min Inbox/projects/vidensapp/ (A status)
-- 3 filer tilføjet under Team Inbox/projects/vidensapp/ (A status)
-- 3 filer renamed via git mv under arkiv/projects/vidensapp/ (RM status)
+- 14 filer tilføjet under Min Inbox/projects/knowlagecentral/ (A status)
+- 3 filer tilføjet under Team Inbox/projects/knowlagecentral/ (A status)
+- 3 filer renamed via git mv under arkiv/projects/knowlagecentral/ (RM status)
 - 2 filer modificeret (Team/_konventioner.md, CLAUDE.md)
 - Nogle modificerede with (AM status — added + modified lokalt pga. link-rettelser)
 ```
@@ -102,8 +102,8 @@ git status --short:
 ## Staging-status ✓
 
 ```
-git add "Min Inbox/projects/vidensapp/"
-git add "Team Inbox/projects/vidensapp/"
+git add "Min Inbox/projects/knowlagecentral/"
+git add "Team Inbox/projects/knowlagecentral/"
 git add Team/_konventioner.md
 git add CLAUDE.md
 git add Team/Camilla/2026-05-05-omorganisering-plan.md
@@ -120,7 +120,7 @@ Som Stefan instruerede: **Intet committet endnu.** Venter på FGD-godkendelse af
 
 ## Eventuelle bekymringer
 
-- **Absolute paths i Laila-rapporter**: Ændret til relative stier `Min Inbox/projects/vidensapp/` i stedet for fuld path — link-tester bekræfter at disse fungerer.
+- **Absolute paths i Laila-rapporter**: Ændret til relative stier `Min Inbox/projects/knowlagecentral/` i stedet for fuld path — link-tester bekræfter at disse fungerer.
 - **Docstring-navne i mandater**: Sofie/Henrik osv.-mandaterne refererer interne tools/skils ved relative stier — alle bevaret intakt (filerne selv er uændrede).
 - **Project-mappers `.gitkeep`**: Ikke nødvendige da `git mv` opretter mapper automatisk. Top-level `.gitkeep` sat for at sikre at Min/Team Inbox/ forbliver tracked selv når tomme.
 
@@ -128,5 +128,5 @@ Som Stefan instruerede: **Intet committet endnu.** Venter på FGD-godkendelse af
 
 1. FGD godkender struktur (eller foreslår justeringer)
 2. Stefan godkender eller justerer omorganiseringen
-3. Camilla committer: `Omorganisér til project-scope: vidensapp under projects/`
+3. Camilla committer: `Omorganisér til project-scope: knowlagecentral under projects/`
 4. Memory opdateres med project-struktur-konvention (Camilla-ansvar)

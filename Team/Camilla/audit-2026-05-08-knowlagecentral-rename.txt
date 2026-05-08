@@ -1,0 +1,88 @@
+Projektomdøbning: Vidensapp → Knowlagecentral
+Audit-rapport — 2026-05-08
+
+SCOPE:
+======
+
+IN-SCOPE OMDØBNINGER:
+- Mappeflyigning: "Team Inbox/projects/vidensapp" → "Team Inbox/projects/knowlagecentral" (git mv)
+- Display-tekst "Vidensapp"/"vidensapp" → "Knowlagecentral"/"knowlagecentral" i alle aktive .md-filer
+- Memory-mappen: projects/vidensapp/ → projects/knowlagecentral/
+- Memory-filindhold: alle referencer opdateret
+
+OUT-OF-SCOPE (BEVARET):
+- arkiv/ — arkiverede dokumenter (historiske navne intakt)
+- .claude/worktrees/ — temporære worktrees (ikke synkroniseret)
+- Filnavne som "2026-05-05-vidensapp-analyse-v3.md" — disse er daterede historiske dokumenter; filnavne bevares, men indhold er opdateret
+
+FILER OPDATERET — REPO-ROD:
+===========================
+
+Agent-mandater (body-tekst):
+  ✓ .claude/agents/laila-hr.md
+  ✓ .claude/agents/mads-ciso.md
+  ✓ .claude/agents/trine-compliance-auditor.md
+
+Dokumentation og governance:
+  ✓ README.md (aktivt projekt sektion)
+  ✓ Team/_konventioner.md (alle projekt-referencer)
+  ✓ CLAUDE.md (rolle-kontekst)
+  ✓ governance/README.md
+  ✓ governance/compliance/2026-05-05-mads-first-session.md
+  ✓ governance/reviews/* (11 filer)
+
+Team Inbox:
+  ✓ Team Inbox/_crosscutting/2026-05-05-mads-ciso-mandat.md
+  ✓ Team Inbox/projects/knowlagecentral/2026-05-05-vidensapp-evernote-style.md
+
+Team/Poul (levende dokumenter):
+  ✓ Team/Poul/2026-05-05-vidensapp-analyse-v3.md
+  ✓ Team/Poul/2026-05-05-vidensapp-arkitektur.excalidraw.NOTE.md
+  ✓ Team/Poul/2026-05-05-vidensapp-udvidelser-vurdering.md
+  ✓ Team/Poul/2026-05-05-secrets-fips-analyse.md
+  ✓ Team/Poul/2026-05-05-vercel-undersoegelse.md
+  ✓ Team/Poul/2026-05-05-yubihsm-integration-analyse.md
+  ✓ Team/Poul/2026-05-08-poul-4eyes-dorthe-mandat.md
+
+Team/Camilla (arbejdsmapper):
+  ✓ 9 filer opdateret (memory-strategi, skill-inventar, audits osv.)
+
+FILER OPDATERET — MEMORY:
+==========================
+
+Mappestruktur:
+  ✓ /Users/fgd/.claude/projects/.../memory/projects/vidensapp/ → projects/knowlagecentral/
+
+Memory-filer (17 stk):
+  ✓ MEMORY.md (index)
+  ✓ Crosscutting feedback-filer (7 stk)
+  ✓ projects/knowlagecentral/* (9 stk)
+    - vidensapp-projekt-2026-05-05.md → knowlagecentral-projekt-2026-05-05.md (logisk)
+    - yubihsm-vej-2026-05-05.md (indhold opdateret)
+    - hsm-fips-140-produktionsmål-2026-05-05.md (indhold opdateret)
+    - osv.
+
+VERIFICERINGS-RESULTATER:
+==========================
+
+Grep-check (eksluder arkiv/, .claude/, filnavne med "vidensapp"):
+  Kommando: grep -rn "vidensapp|Vidensapp" <repo> --exclude-dir=arkiv --exclude-dir=.claude
+  Resultat: 1 hit
+  Hit: README.md:87 — filnavn-reference "[2026-05-05-vidensapp-analyse-v3.md]"
+  Status: ACCEPTABEL — filnavnet skal være historisk, linket er korrekt
+
+SUMMARY:
+========
+
+✅ OMDØBNING FULDFØRT
+- Alle display-tekst-referencer opdateret
+- Memory-projekt-struktur omdøbt
+- Filnavne (historiske dokumenter) bevaret
+- Audit-logs er ren
+
+Git-status (før commit):
+- M: ~25 filer (display-tekst opdateret)
+- R: Team Inbox/projects/vidensapp → Team Inbox/projects/knowlagecentral
+- Memory-mapper: manuelt omdøbt (udenfor git)
+
+Næste: git add + commit med besked: "Omdøb projekt: Vidensapp → Knowlagecentral"

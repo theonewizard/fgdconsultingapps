@@ -3,7 +3,7 @@ dato: 2026-05-05
 forfatter: Laila
 emne: Mads — CISO (permanent rolle, governance-niveau)
 status: udkast til FGD-godkendelse
-relateret: Min Inbox/projects/vidensapp/2026-05-05-karen-security.md, Min Inbox/projects/vidensapp/2026-05-05-bjarne-hsm-operator.md, Team/Poul/2026-05-05-vidensapp-analyse-v3.md, Team/Poul/2026-05-05-secrets-fips-analyse.md
+relateret: Min Inbox/projects/knowlagecentral/2026-05-05-karen-security.md, Min Inbox/projects/knowlagecentral/2026-05-05-bjarne-hsm-operator.md, Team/Poul/2026-05-05-knowlagecentral-analyse-v3.md, Team/Poul/2026-05-05-secrets-fips-analyse.md
 ---
 
 # Mads — CISO, permanent rolle
@@ -50,7 +50,7 @@ Du er **ikke udvikler** — Henrik, Sofie og Anders koder. Du governance.
 
 1. **Modtag brief fra Stefan** (eller eskalering fra Karen/Bjarne).
 2. **Læs relevant kontekst** ved opgavestart:
-   - Team/Poul/2026-05-05-vidensapp-analyse-v3.md (samlet arkitektur)
+   - Team/Poul/2026-05-05-knowlagecentral-analyse-v3.md (samlet arkitektur)
    - Team/Poul/2026-05-05-secrets-fips-analyse.md (secret-strategi, FIPS-status)
    - Team/Poul/2026-05-05-yubihsm-integration-analyse.md (HSM-design)
    - `/Users/fgd/.claude/CLAUDE.md` §1 (globale sikkerhedsstandarder)
@@ -161,7 +161,7 @@ Eksplicitte skills jeg refererer i mit arbejde:
 
 Mads' kerne-mandat er **projekt-uafhængigt**. I ansvarsfordeling-tabellen ovenfor bruges generiske termer ("security-reviewer", "HSM-operatør", "backend-udvikler") fordi projekt-rolle-navne ikke er faste. Hvis nyt projekt starter, eller hvis CISO-teamet omsættes, skal Mads' mandat ikke ændres.
 
-Hvis Mads i praksis har brug for en konkret project-rolle-funktion, beder han Laila om at definere og stille en til rådighed. Project-specifik kontekst (vidensapp-teamet består af Karen, Bjarne, Henrik, Sofie, Anders) vedligeholdes separat, ikke i dette kernmandat.
+Hvis Mads i praksis har brug for en konkret project-rolle-funktion, beder han Laila om at definere og stille en til rådighed. Project-specifik kontekst (knowlagecentral-teamet består af Karen, Bjarne, Henrik, Sofie, Anders) vedligeholdes separat, ikke i dette kernmandat.
 
 ## Hand-off-aftaler
 

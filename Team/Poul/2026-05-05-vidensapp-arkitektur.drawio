@@ -1,0 +1,218 @@
+<mxfile host="app.diagrams.net" version="25.0" type="device">
+  <diagram id="vidensapp-arkitektur" name="Vidensapp-arkitektur">
+    <mxGraphModel dx="50" dy="50" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="fgd-konti" value="FGD-ejede konti (oprettelse + betaling)" style="swimlane;html=1;startSize=20;horizontal=1;fillColor=#FFE6D5;strokeColor=#666666;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="500" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="camilla-setup" value="Camilla setup (efter FGD-handover)" style="swimlane;html=1;startSize=20;horizontal=1;fillColor=#E6F2FF;strokeColor=#666666;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="520" y="0" width="500" height="180" as="geometry"/>
+        </mxCell>
+        <mxCell id="sofie" value="Sofie - frontend" style="swimlane;html=1;startSize=20;horizontal=1;fillColor=#CCE5FF;strokeColor=#666666;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1040" y="0" width="380" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="henrik" value="Henrik - backend" style="swimlane;html=1;startSize=20;horizontal=1;fillColor=#D9F0D5;strokeColor=#666666;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1440" y="0" width="380" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="anders" value="Anders - AI-pipeline" style="swimlane;html=1;startSize=20;horizontal=1;fillColor=#E6D9F0;strokeColor=#666666;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="0" y="300" width="500" height="260" as="geometry"/>
+        </mxCell>
+        <mxCell id="tailscale" value="Tailscale-tunnel (mTLS over WireGuard)" style="swimlane;html=1;startSize=20;horizontal=1;fillColor=#FFF9E6;strokeColor=#666666;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="520" y="300" width="920" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="fgdkontor" value="FGD-kontor (on-prem) - Bjarne drift / Karen review" style="swimlane;html=1;startSize=20;horizontal=1;fillColor=#F0E6D9;strokeColor=#666666;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="520" y="420" width="920" height="340" as="geometry"/>
+        </mxCell>
+        <mxCell id="vercel-acct" value="Vercel Pro&#10;Personal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD9B3;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="fgd-konti">
+          <mxGeometry x="20" y="30" width="110" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="anthr-acct" value="Anthropic&#10;spend-caps" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD9B3;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="fgd-konti">
+          <mxGeometry x="150" y="30" width="110" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="cf-acct" value="Cloudflare DNS&#10;konto" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD9B3;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="fgd-konti">
+          <mxGeometry x="280" y="30" width="110" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="ts-acct" value="Tailscale&#10;konto + ACL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFD9B3;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="fgd-konti">
+          <mxGeometry x="370" y="30" width="110" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="vercel-prj" value="Vercel projekt&#10;+ Native Neon" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3D9FF;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="camilla-setup">
+          <mxGeometry x="20" y="30" width="110" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="clerk-app" value="Clerk app&#10;FREE plan" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3D9FF;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="camilla-setup">
+          <mxGeometry x="150" y="30" width="110" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="anthr-ws" value="Anthropic&#10;3 workspaces" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3D9FF;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="camilla-setup">
+          <mxGeometry x="280" y="30" width="110" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="cf-rec" value="Cloudflare&#10;CNAME DNS only" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3D9FF;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="camilla-setup">
+          <mxGeometry x="370" y="30" width="110" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="browser" value="Browser / PWA&#10;Next.js 16.2 + React 19.2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="sofie">
+          <mxGeometry x="20" y="30" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="rsc" value="RSC pages +&#10;Server Actions UI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="sofie">
+          <mxGeometry x="180" y="30" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="design" value="Design-system&#10;GetDesign.md" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="sofie">
+          <mxGeometry x="20" y="110" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="serwist" value="Serwist offline&#10;(fase 2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="sofie">
+          <mxGeometry x="180" y="110" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="domain" value="docs.fgdconsulting.se&#10;Cloudflare DNS-only" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#99CCFF;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="sofie">
+          <mxGeometry x="20" y="190" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="vercel-rt" value="Vercel Functions&#10;Route Handlers /api/*" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3E6A6;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="henrik">
+          <mxGeometry x="20" y="30" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="clerk-auth" value="Clerk Auth 7.2&#10;JWT-template &quot;neon&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3E6A6;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="henrik">
+          <mxGeometry x="180" y="30" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="cron" value="Vercel Cron&#10;expire-invites" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3E6A6;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="henrik">
+          <mxGeometry x="20" y="110" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="neon" value="Neon Postgres&#10;Frankfurt, prod/test/dev" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3E6A6;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="henrik">
+          <mxGeometry x="180" y="110" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="sign-api" value="/api/sign/*&#10;(call-through to bridge)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3E6A6;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="henrik">
+          <mxGeometry x="20" y="190" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="inngest" value="Inngest v4&#10;step-functions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9B3F0;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="anders">
+          <mxGeometry x="20" y="30" width="110" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="aisdk" value="Vercel AI SDK v6&#10;ai + @ai-sdk/anthropic" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9B3F0;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="anders">
+          <mxGeometry x="150" y="30" width="110" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="anthropic" value="Anthropic API&#10;Haiku 4.5 batch" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9B3F0;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="anders">
+          <mxGeometry x="280" y="30" width="110" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="voyage" value="Voyage AI&#10;voyage-3.5 1024d" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9B3F0;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="anders">
+          <mxGeometry x="20" y="110" width="110" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="prompts" value="Prompt-bibliotek&#10;versioneret i git" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D9B3F0;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="anders">
+          <mxGeometry x="150" y="110" width="110" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="ts-net" value="tailnet ACL&#10;kun /api/sign-egress" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFACC;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="tailscale">
+          <mxGeometry x="20" y="30" width="140" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="hsm-host" value="HSM-bridge server&#10;Linux + UPS + Tailscale" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6D4B3;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="fgdkontor">
+          <mxGeometry x="20" y="30" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="bridge" value="HSM-bridge service&#10;Go + libyubihsm" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6D4B3;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="fgdkontor">
+          <mxGeometry x="180" y="30" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="hsm-online" value="YubiHSM 2 FIPS&#10;Online (USB)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6D4B3;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="fgdkontor">
+          <mxGeometry x="20" y="110" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="hsm-offline" value="YubiHSM 2 FIPS&#10;Offline (cold-backup)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6D4B3;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="fgdkontor">
+          <mxGeometry x="180" y="110" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="key-cer" value="Wrap-key-ceremony&#10;Karen + Bjarne" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E6D4B3;strokeColor=#666666;fontSize=10;align=center;verticalAlign=middle" vertex="1" parent="fgdkontor">
+          <mxGeometry x="20" y="190" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="CNAME DNS only" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="domain" target="browser">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" value="HTTPS + JWT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="browser" target="vercel-rt">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" value="Server Action" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="rsc" target="vercel-rt">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" value="JWT validering" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="vercel-rt" target="clerk-auth">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" value="HTTP fetch + JWT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="vercel-rt" target="neon">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" value="GET /api/cron/*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="cron" target="vercel-rt">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" value="emit event / callback" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="vercel-rt" target="inngest">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" value="step-call" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="inngest" target="aisdk">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" value="Messages API" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="aisdk" target="anthropic">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" value="direkte SDK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="aisdk" target="voyage">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11" value="skriv enrichment + audit" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="inngest" target="neon">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" value="læser" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="aisdk" target="prompts">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" value="sign-request" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="vercel-rt" target="sign-api">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" value="HTTPS via Tailscale magic-DNS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="sign-api" target="ts-net">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" value="mTLS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="ts-net" target="bridge">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" value="local" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="hsm-host" target="bridge">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17" value="USB / yubihsm-connector" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="bridge" target="hsm-online">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" value="tilkobles kun under DR" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="bridge" target="hsm-offline">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19" value="initial sync + verify" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="key-cer" target="hsm-online">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e20" value="wrapped backup-blob" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#666666;fontSize=9" edge="1" parent="1" source="key-cer" target="hsm-offline">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"/>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

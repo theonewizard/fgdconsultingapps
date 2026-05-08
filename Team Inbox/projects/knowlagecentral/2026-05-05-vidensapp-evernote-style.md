@@ -5,7 +5,7 @@ status: under-analyse
 ejer: Poul (analyse) -> TBD (arkitektur+build)
 ---
 
-# Vidensapp i Evernote-stil — opgavebrief
+# Knowlagecentral i Evernote-stil — opgavebrief
 
 ## FGD's ord
 

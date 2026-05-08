@@ -16,7 +16,7 @@ status: commit-scope-dokumentation
 | **Modified (audit-rapport)** | 1 | `Team/Camilla/2026-05-05-mandater-reference-audit.md` (fejl-oversigt-tabel) |
 | **Modified (konvention)** | 1 | `Team/_konventioner.md` (ingen substansielle ændringer) |
 | **New (arkiv)** | 1 | `arkiv/Min Inbox/2026-05-05-laila-reviewer-rolle-design-til-godkendelse.md` (umoved, skal stages) |
-| **Renamed (arkiv)** | 3 | `Min Inbox/2026-05-05-vidensapp-pouls-analyse.md` → `arkiv/...` (mv'd, stages) |
+| **Renamed (arkiv)** | 3 | `Min Inbox/2026-05-05-knowlagecentral-pouls-analyse.md` → `arkiv/...` (mv'd, stages) |
 | **Total staged** | ~33 filer | (se git status efter stage) |
 
 ## Hovedkategorier (IN scope for denne atomic commit)
@@ -37,8 +37,8 @@ status: commit-scope-dokumentation
 | `.agents/` og `.claude/skills/` (untracked) | Ikke relevante for denne scope — er dev-infrastruktur |
 | `Team/Poul/2026-05-05-secrets-fips-analyse.md` (untracked) | Pouls arbejde — separat commit anført af Poul |
 | `Team/Poul/2026-05-05-vercel-undersoegelse.md` (untracked) | Pouls arbejde — separat commit |
-| `Team/Poul/2026-05-05-vidensapp-analyse-v3.md` (untracked) | Pouls arbejde — separat commit |
-| `Team/Poul/2026-05-05-vidensapp-arkitektur.excalidraw*` (untracked) | Pouls arbejde — separat commit |
+| `Team/Poul/2026-05-05-knowlagecentral-analyse-v3.md` (untracked) | Pouls arbejde — separat commit |
+| `Team/Poul/2026-05-05-knowlagecentral-arkitektur.excalidraw*` (untracked) | Pouls arbejde — separat commit |
 | `governance/reviews/2026-05-05-mads-bro-review-runde-2.md` (untracked) | Mads' review-rapport — separat commit af Mads/Stefan |
 | `CLAUDE.md`, `.claude/agents/camilla-bibliotekar.md`, etc. (modified, untracked) | Ikke relevante til denne scope — holding for separate commit(s) |
 

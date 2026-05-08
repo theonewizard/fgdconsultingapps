@@ -131,7 +131,7 @@ color: [farve]
 - Design Camilla-rollen (bibliotekar, ops, memory)
 - Design Laila-rollen (HR, rolle-design) — dig selv!
 
-### Fase 1 (Vidensapp MVP)
+### Fase 1 (Knowlagecentral MVP)
 
 - Design frontend-developer-rollen
 - Design backend-developer-rollen
