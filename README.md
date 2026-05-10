@@ -104,4 +104,4 @@ Nøgle-dokumenter:
 
 - Application Owner-mandat: [.claude/agents/fgdcorepki-application-owner.md](.claude/agents/fgdcorepki-application-owner.md)
 - Application Provider-mandat: [.claude/agents/fgdcorepki-application-provider.md](.claude/agents/fgdcorepki-application-provider.md)
-- Projekt-arbejdsmappe: `Team/projects/fgdcorepki/` (oprettes når første artefakt skrives)
+- Projekt-arbejdsmappe: [Team/projects/fgdcorepki/](Team/projects/fgdcorepki/)
