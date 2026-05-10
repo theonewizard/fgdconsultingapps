@@ -13,6 +13,25 @@ Format pr. entry:
 
 ---
 
+## 2026-05-09 — Aktivering af FGDCorePKI Application Owner + Application Provider projekt-roller
+
+- **Beslutning**: Aktivering af to nye projekt-roller for FGDCorePKI PKI-infrastruktur:
+  - `.claude/agents/fgdcorepki-application-owner.md` (sonnet, blue)
+  - `.claude/agents/fgdcorepki-application-provider.md` (opus, cyan)
+- **Reviewer 1**: Mads (CISO) — 4-eyes: CONDITIONAL GO (5 blokerende); final-check: CONDITIONAL GO (FC2+FC4); re-check: GO
+- **Reviewer 2**: Dorthe (DPO) — 4-eyes: STOP (8 blokerende + 6 betingede); final-check: GO (alle fund adresseret i v2)
+- **Udkast-spor**: Laila v1 → v2 (Mads+Dorthe 4-eyes) → v2.1 (FC2+FC4-rettelser)
+- **Strategiske FGD-beslutninger** (2026-05-09):
+  - PKI scope: Intern PKI (ikke CABF public trust)
+  - HSM-operatør: Ny dedikeret person til FGDCorePKI (Bjarne kører ikke begge)
+  - AO: Delegeret intern FGD-person (navn TBD)
+  - AP vs. Engineering Team Lead: Option B — to separate fra dag 1
+- **FGD GO**: "/loop 10" — FGD, 2026-05-09 (fortolket som GO i kontekst af direkte spørgsmål)
+- **Dorthes DPIA-krav i Fase 0** (ikke blokkerende for aktivering):
+  1. Key ceremony video/lydoptagelse med lang retention
+  2. OCSP/CRL CDN-hosting (afhænger af arkitekturvalg)
+- **Logget af**: Stefan (Camilla committer)
+
 ## 2026-05-09 — Aktivering af Application Owner + Application Provider projekt-roller
 
 - **Beslutning**: Aktivering af to nye projekt-roller for applikationsudvikling i Knowlagecentral:

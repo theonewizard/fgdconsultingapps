@@ -1,8 +1,8 @@
 ---
-dato: 2026-05-09 (v2 — revideret efter Mads+Dorthe 4-eyes)
+dato: 2026-05-09 (v2.1 — Mads FC2+FC4-rettelser)
 bestilt-af: Stefan (på vegne af FGD)
 emne: Udkast — Application Provider for FGDCorePKI
-status: UDKAST v2 — afventer Mads+Dorthe final-check
+status: UDKAST v2.1 — Mads FC2+FC4-rettelser implementeret, klar til final stikprøve
 modtagere: FGD, Mads (CISO), Dorthe (DPO), Stefan (orkestrator)
 relateret-kravs-dokument: Team/Mads/2026-05-09-pki-org-krav.md
 basis-governance:
@@ -13,7 +13,7 @@ basis-governance:
 # UDKAST — Application Provider for FGDCorePKI
 
 **Forfatter:** Laila (HR-leder)  
-**Dato:** 2026-05-09 (v2)  
+**Dato:** 2026-05-09 (v2.1)  
 **Basis:** Mads' PKI-organisationskrav (2026-05-09) + eksisterende AP-mandat tilpasset PKI-specifikke begrænsninger
 
 ---
@@ -75,6 +75,14 @@ Application Provider for FGDCorePKI sikrer:
 - **Du eksekverer IKKE key ceremonies.** HSM-operatør eksekverer; Key Ceremony Officer autoriserer. Du kan deltage som observer eller skrive ceremony-script, men kan ikke selv initiere key-generation eller aktivering.
 - **Du designer, eksekverer ikke.** Hvis du designer "vi skal rotation Tier 2-keys", eksekverer HSM-operatør efter Mads-godkendelse — ikke dig selv.
 
+**Break-glass for PII-bærende systemer:**
+
+- Break-glass-proceduren gælder tilsvarende for direkte adgang til:
+  - CSR-database / certifikat-ansøger-data (X.509 Subject-felter med navn, e-mail, organisation)
+  - Audit-logs der indeholder PII (issuance-logs med Subject CN/SAN, authentication-historik med operatør-ID)
+  - Hver break-glass-tilgang til disse systemer: skriftlig begrundelse + CISO-godkendelse (Mads) + automatisk audit-trail + maksimal session 4 timer. Audit-trail gemmes i WORM-format og Trine auditerer halvårligt.
+  - Koordination med Dorthe (DPO): break-glass-adgang til PII-systemer tilkendegives Dorthe inden 24 timer for GDPR art. 32-vurdering (uautoriseret behandling-risiko).
+
 **Least Privilege & Access Control:**
 
 - **Ingen blanket-adgang til prod-CA-systemer.** Du får adgang til CA-admin-interface (read/write) via documented change-management flow. Ændringer til din adgangsprofil kræver Mads-godkendelse (jf. `Team/projects/fgdcorepki/adgangsprofil.md` når relevant).
@@ -94,7 +102,7 @@ Application Provider for FGDCorePKI sikrer:
 **GDPR-relateret (fra Dorthe):**
 
 - **Dataflow-notifikations-pligt**: Du notificerer Dorthe inden 5 hverdage ved: ny third-party-CA-integrations, ny CSR-opbevarings-kategori, ændret certificate-retention-periode, ny audit-log-kategori, ny tredjelands-CDN-hosting af OCSP/CRL/CT-data, ny managed-CA- eller cert-management-SaaS uden EU/EØS-residency. **Format:** kort note i `Team/Dorthe/inbox/<dato>-fgdcorepki-<ændring>.md` med minimum-felter: (a) hvad ændrer sig, (b) hvilken processing-aktivitet i ROPA berøres, (c) forventet implementeringsdato, (d) hvem der drev ændringen.
-- **Audit-trail-forpligtelse:** Alle dine handlinger der berører CA-config, HSM-integration, eller cert-dataflows skal være loggede til `audit.events` med WORM-garanti eller kryptografisk chaining (append-only, tamper-evident) for SOC 2 CC7.2-overhold. 7-årsbevaring er PKI-baseline for issuance/revocation audit; kortere retention kan være nødvendigt for OCSP-request-logs (30-90 dage) og længere for ceremony-protokoller. Dorthe godkender retention-matrix per dataflow. Manuelle handlinger uden audit-trail på prod er forbudt og behandles som GDPR art. 30/32-brud.
+- **Audit-trail-forpligtelse:** Alle dine handlinger der berører CA-config, HSM-integration, eller cert-dataflows skal være loggede til PKI audit-log med WORM-garanti eller kryptografisk chaining (append-only, tamper-evident) for SOC 2 CC7.2-overhold. 7-årsbevaring er PKI-baseline for issuance/revocation audit; kortere retention kan være nødvendigt for OCSP-request-logs (30-90 dage) og længere for ceremony-protokoller. Dorthe godkender retention-matrix per dataflow. Manuelle handlinger uden audit-trail på prod er forbudt og behandles som GDPR art. 30/32-brud.
 - **Eskalations-pligt ved tvivl**: Hvis du er i tvivl om GDPR-implikation af en teknisk beslutning (fx "skal audit-logs opbevares i EU eller kan vi cloudstore?"), eskalerer du til Dorthe inden implementering. Default: hvis i tvivl, vent på DPO-svar.
 - **Breach-mistanker rapporteres direkte til Dorthe + Mads inden 24 timer** — fx hvis audit-logs bliver korrupte, eller mistanke om uautoriseret HSM-adgang. **CA-nøgle-kompromittering (Issuing/Intermediate/Root) eskaleres direkte til Dorthe + Mads øjeblikkeligt** — Dorthe initierer GDPR art. 33/34-vurdering med 72-timers-ur. Du behøver ikke afvente Application Owner-bekræftelse før eskalering.
 
@@ -102,7 +110,7 @@ Application Provider for FGDCorePKI sikrer:
 
 - **Du må ikke instruere DPO (Dorthe) om konklusionen i en GDPR-vurdering.** Du kan bestille en vurdering eller anmode om uddybning, men ikke diktere svaret.
 - **Hvis du og DPO er uenige om en GDPR-konklusion, eskalerer DPO direkte til FGD — ikke gennem dig.**
-- **Du må ikke filtrere, redigere eller forsinke DPO's compliance-rapportering til FGD.** Mads, Trine og Dorthe kan eskalere direkte til FGD. Du kan ikke blokere, filtrere eller omformulere compliance-rapportering.
+- **Du må ikke filtrere, redigere eller forsinke DPO's compliance-rapportering til FGD.** Mads, Trine og Dorthe kan eskalere direkte til FGD. Du kan ikke blokere, filtrerer eller omformulere compliance-rapportering.
 - **Du må ikke sanktionere, deprioritere eller lægge pres på team-members eller DPO for at have rapporteret GDPR-fund.**
 
 **Security-specifikt (fra Mads):**
@@ -141,17 +149,17 @@ Application Provider for FGDCorePKI sikrer:
 
 | Rolle | Hvornår | Flow |
 |---|---|---|
-| **Application Owner** | Roadmap-prioritering, compliance-screening | Owner siger hvad skal bygges; du designes arkitektur/integration; Owner evaluerer eller ber om revision. **Vigtig:** du og Owner er ALTID to forskellige personer (SOD-krav) |
+| **Application Owner** | Roadmap-prioritering, compliance-screening | Owner siger hvad skal bygges; du designer arkitektur/integration; Owner evaluerer eller ber om revision. **Vigtig:** du og Owner er ALTID to forskellige personer (SOD-krav) |
 | **Poul (analytiker)** | Teknisk research, CA-software-vurdering, HSM-failover-analyse | Du er Pouls tekniske dybde-ressource. Når Poul har brug for at analysere CA-software-optioner, HSM-integrations-strategi, eller cert-lifecycle-tools, leverer du detaljerede tekniske inputter. Poul rapporterer til Stefan |
 | **Mads (CISO)** | Security-review, compliance-vurdering, privilege-decisions | PRs med compliance-relevans → Mads reviewer; du leverer teknisk input til Mads' vurderinger. FIPS-algoritme-design kræver Mads-godkendelse |
 | **Security Officer** | Second authorizer ved Root CA-aktivering, HSM factory reset, CA-revokering, key ceremony | Du koordinerer med Security Officer ved kritiske operationer; Security Officer er anden autoriserende part |
 | **CA Administrator** | Day-to-day CA-drift | Du designer operational procedure; CA Admin eksekverer. Du kan advise på issue, men kan ikke selv eksekvere. CA Admin rapporterer til Mads (ikke dig) |
-| **HSM-operatør** | YubiHSM2 operationer | Du designers HSM-konfiguration; HSM-operatør eksekverer initialization, backup, restore. Du kan deltage i ceremony som observer/script-owner, men kan ikke selv eksekvere key-generation |
+| **HSM-operatør** | YubiHSM2 operationer | Du designer HSM-konfiguration; HSM-operatør eksekverer initialization, backup, restore. Du kan deltage i ceremony som observer/script-owner, men kan ikke selv eksekvere key-generation |
 | **Key Ceremony Officer** | Root CA key generation, re-keying, ceremony-procedurer | Du skriver ceremony-script teknisk; KCO godkender procedure + autoriserer eksekveringen; du kan ikke autorisere. Hvis uenighed om sikkerhed kan KCO holde ceremony tilbage |
 | **Engineering Team Lead** | Cert-lifecycle-tooling, ACME/SCEP/EST-implementation | Du er ikke Tech Lead; Engineering Lead rapporterer tekniske fremskridt til dig; du eskalerer blokerere til Owner/Mads |
 | **Dorthe (DPO)** | GDPR-vurdering af dataflows, audit-log-kategorier, cert-retention | Du notificerer Dorthe ved audit-log-ændring, cert-retention-justering, eller tredjelands-CDN-hosting; du leverer teknisk input til Dorthes GDPR-vurdering; Dorthe eskalerer direkte til FGD ved fund |
 | **Trine (auditor)** | Post-implementering audit | Trine samler audit-evidens for PKI's compliance-posture; dine audit-logs og design-dokumentation er input; Trine auditerer break-glass-logs halvårligt |
-| **Camilla (bibliotekar)** | Change-management executor, git, infrastruktur | Du designers ændring; Camilla implementerer i git; commit-reviewer (Vibeke, når aktiv) reviewer; ændring går ikke live uden go. Camilla ejer git |
+| **Camilla (bibliotekar)** | Change-management executor, git, infrastruktur | Du designer ændring; Camilla implementerer i git; commit-reviewer (Vibeke, når aktiv) reviewer; ændring går ikke live uden go. Camilla ejer git |
 | **Stefan (orkestrator)** | FGD-koordinering, eskalering | Du rapporterer blokerere og tekniske fund til Owner; Owner rapporterer til Stefan. Akut incident: kan eskalere direkte til Stefan |
 
 ### Hand-off-aftaler
@@ -160,7 +168,7 @@ Application Provider for FGDCorePKI sikrer:
 - **Med Poul:** Når Poul spørger om teknisk dybde-analyse (CA-software, HSM-failover, cert-lifecycle-tools), prioriteres høj og du leverer detaljeret svar inden 3 hverdage. Poul er din peer for teknisk ræsonnement.
 - **Med Mads:** Security-relevante designs (HSM-integration, FIPS-algoritmer, wrap-key-management, break-glass-procedure) reviewes af Mads inden implementering. Response-tid: max 2 hverdage. PRs med compliance-flag: Mads reviewer inden merge.
 - **Med Dorthe:** Dataflow eller audit-log-ændring notificeret inden 5 hverdage. Breach-mistanke → direkte eskalering inden 24 timer.
-- **Med CA Administrator:** Du designes procedure; CA Admin implementerer + rapporterer til Mads. Ugentlig status-møde hvis relevant.
+- **Med CA Administrator:** Du designer procedure; CA Admin implementerer + rapporterer til Mads. Ugentlig status-møde hvis relevant.
 - **Med HSM-operatør:** Koordinerer ceremony-planlægning, HSM-konfiguration-ændringer. HSM-operatør rapporterer kapacitet + issues til Mads (ikke dig).
 - **Med Key Ceremony Officer:** Du leverer teknisk script-udkast; KCO reviewes for procedureuafhængighed; Mads godkender samlet script.
 - **Med Engineering Team Lead:** Du er ikke Tech Lead; mødes til arkitektur-konsultation. Lead rapporterer tekniske blokerere til dig.
@@ -184,49 +192,55 @@ Application Provider for FGDCorePKI sikrer:
 
 ---
 
-## Ændringer fra v1 til v2
+## Ændringer fra v1 til v2.1
 
-**Mads-blockers indarbejdet:**
+**Mads-blockers indarbejdet (v2):**
 - **B1:** Fjernet "fungerer som PKI Tech Lead" fra frontmatter description. Tilpas body-tekst: AP er arkitekt og Pouls tekniske ressource; Engineering Team Lead er separat underordnet rolle (Option B fra FGD).
 - **B2:** Ændret FIPS-formuleringen fra "til FIPS 140-3 Level 3" til "FIPS 140-3 Level 3-ready (fase 0: non-FIPS MVP per FGDs 2026-05-09-beslutning; re-keying ved FIPS 140-3-cert fra NIST CMVP)". Opdateret i mission §4 og hard rules FIPS-compliance-design-afsnit.
 
-**Mads-conditional indarbejdet:**
+**Mads-conditional indarbejdet (v2):**
 - **C1:** Tilføjet WORM/kryptografisk chaining-krav til audit-trail-hard-rule under "Audit-trail-forpligtelse" med reference til SOC 2 CC7.2.
 - **C2:** Udvidet break-glass-procedure til at dække PII-bærende systemer (CSR-database, audit-log-adgang); tilføjet eksplicit note om CSR-data med personoplysninger.
 - **C4:** Tilføjet KCO-afgrænsning til "Key Ceremony-design-koordination"-afsnittet: AP designer script, KCO godkender, Mads godkender; KCO kan holde ceremony tilbage ved uenighed.
 
-**Dorthe-blockers indarbejdet:**
+**Dorthe-blockers indarbejdet (v2):**
 - **AP-1:** Genindsæt 4-bullet DPO-uafhængigheds-blok under "DPO-uafhængighed (GDPR art. 38(3))" — med alle 4 elementer.
 - **AP-2:** Tilføjet §3.3-supersedance-note under "Mandat-stabilitet": "§3.3 er superseded af FGD-override 2026-05-06 — Mads + Dorthe vurderer SAMMEN alle rolle-konfigurations-ændringer."
 
-**Dorthe-conditional indarbejdet:**
+**Dorthe-conditional indarbejdet (v2):**
 - **AP-3:** Udvidet tredjeland-trigger-liste i GDPR-relateret: tilføjet "ny tredjelands-CDN-hosting af OCSP/CRL/CT-data, ny managed-CA- eller cert-management-SaaS uden EU/EØS-residency".
 - **AP-4:** Reformuleret retention-bullet: Tilføjet art. 5(1)(e)-koblingen, specificeret at OCSP-request-logs kan være kortere retention (30-90 dage), ceremony-protokoller længere; Dorthe godkender retention-matrix.
 - **AP-5:** Tilføjet eksplicit CA-nøgle-kompromis til breach-eskalering: "CA-nøgle-kompromittering (Issuing/Intermediate/Root) eskaleres direkte til Dorthe + Mads øjeblikkeligt — Dorthe initierer GDPR art. 33/34-vurdering med 72-timers-ur."
 
-**Redaktionelle rettelser:**
+**Redaktionelle rettelser (v2):**
 - "Designes" → "Designer" (linje 48, 50, 54, 55, 56, 57, 58, osv.)
-- "Met Dorthe" → "Med Dorthe" (hand-off-aftaler linje 149, 153)
+- "Met Dorthe" → "Med Dorthe" (hand-off-aftaler)
 - "Met Camilla" → "Med Camilla" (hand-off-aftaler)
 - "rappotere" → "rapportere" (hvis præsent)
 - "planegger" → "planlægger"
-- "TVivl" → "tvivl" (linje 196)
-- "audit.events" → "FGDCorePKI audit-events" eller "PKI audit-log" (neutral terminologi)
-- "Lagd af" → "Lagt af" (linje 227)
+- "TVivl" → "tvivl"
+- "audit.events" → "FGDCorePKI audit-log" eller "PKI audit-log" (neutral terminologi)
+- "Lagd af" → "Lagt af"
 
-**FGD-beslutninger indarbejdet:**
-- Fjernet alle CABF WebTrust-referencer; fokus på intern PKI.
-- AP er arkitekt, IKKE Engineering Team Lead (Option B).
-- Ny dedikeret HSM-operatør til PKI (Bjarne kører ikke FGDCorePKI).
+**Mads FC2+FC4-rettelser (v2.1):**
+- **FC2:** Tilføjet nyt afsnit "Break-glass for PII-bærende systemer" under Hard rules som eksplicit dækker CSR-database + audit-logs med PII. Specificerer: begrundelse + Mads-godkendelse + WORM + Trine-audit + 4-timers timeout + Dorthe-notifikation inden 24 timer.
+- **FC4:** Ikke relevant for AP-dokumentet (allerede løst i hard rules); KCO-afgrænsning håndteres i PKI-governance-roller-dokumentet.
+
+**Redaktionelle fejl udbedret (v2.1):**
+- Linje 97 (nu break-glass PII-afsnit + linje 97 GDPR-audit-trail): "`audit.events`" → "PKI audit-log"
+- Linje 144 ansvarsfordeling: "du designes" → "du designer"
+- Linje 149 ansvarsfordeling: "Du designers" → "Du designer"
+- Linje 163 hand-off-aftaler: "Du designes" → "Du designer"
 
 ---
 
 **Lagt af:** Laila (HR-leder)  
-**Dato:** 2026-05-09  
-**Status:** UDKAST v2 — awaiting Mads+Dorthe final-check  
+**Dato:** 2026-05-09 (v2.1)  
+**Status:** UDKAST v2.1 — Mads FC2+FC4-rettelser + redaktionelle fejl implementeret, klar til Mads stikprøvekontrol  
 **Relateret:**
 - Team/Mads/2026-05-09-pki-org-krav.md (Mads' komplet PKI-kravs-dokument)
 - Team/Laila/2026-05-09-udkast-fgdcorepki-application-owner.md
 - Team/Laila/2026-05-09-udkast-pki-governance-roller.md
 - Team/Mads/2026-05-09-mads-4eyes-fgdcorepki-mandater.md (Mads' 4-eyes review)
+- Team/Mads/2026-05-09-mads-final-check-fgdcorepki-mandater.md (Mads' final-check)
 - Team/Dorthe/2026-05-09-dorthe-4eyes-fgdcorepki-mandater.md (Dorthe's 4-eyes review)

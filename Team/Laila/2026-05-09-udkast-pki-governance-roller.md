@@ -1,8 +1,8 @@
 ---
-dato: 2026-05-09 (v2 — revideret efter Mads+Dorthe 4-eyes)
+dato: 2026-05-09 (v2.1 — Mads FC2+FC4-rettelser)
 bestilt-af: Stefan (på vegne af FGD)
 emne: Udkast — PKI Governance Roller Profiler (FGDCorePKI)
-status: UDKAST v2 — afventer Mads+Dorthe final-check
+status: UDKAST v2.1 — Mads FC2+FC4-rettelser implementeret, klar til final stikprøve
 modtagere: FGD, Mads (CISO), Dorthe (DPO), Stefan (orkestrator)
 relateret-kravs-dokument: Team/Mads/2026-05-09-pki-org-krav.md (§1 + §6.1)
 ---
@@ -10,7 +10,7 @@ relateret-kravs-dokument: Team/Mads/2026-05-09-pki-org-krav.md (§1 + §6.1)
 # UDKAST — PKI Governance Roller Profiler (FGDCorePKI)
 
 **Forfatter:** Laila (HR-leder)  
-**Dato:** 2026-05-09 (v2)  
+**Dato:** 2026-05-09 (v2.1)  
 **Basis:** Mads' PKI-organisationskrav — syv dedikerede projekt-roller for FGDCorePKI plus en udvidelse af eksisterende rolle
 
 ---
@@ -155,7 +155,9 @@ Mads anbefaler **separat rolle eller dedikeret tillæg** til Bjarne's mandat:
 
 ### Specifikke opgaver
 
-- **Ceremony-script-development:** Samarbejde med Application Provider + Mads på full step-by-step script for Root CA key generation; script-review og signering før ceremoni
+- **Ceremony-script-development:** Samarbejde med Application Provider + Mads på full step-by-step script for Root CA key generation; script-review og signering før ceremoni.
+  - **Rolleafgrænsning:** Application Provider leverer teknisk script-udkast (procedurerne for HSM-kommandoer, nøgleparametre, validerings-checkpoints). Key Ceremony Officer godkender proceduren som helhed for ceremoniuel sikkerhed og autoritet (kan ikke delegeres). Mads godkender det færdige script inden ceremoni eksekveres. Hvis uenighed mellem AP og KCO om procedure-sikkerhed kan KCO holde ceremony tilbage, og Mads megler.
+
 - **Participant-koordinering:** Identify + notify 5 smartcard-holders (Key Ceremony Officer + 4 secondary); coordinate m-of-3 activation-scheme (3-of-5 holders skal være til stede for Root CA activation)
 - **Witness-recruitment:** Find 2 uafhængige witnesses (ikke CA-operators); brief dem på procedure før ceremoni
 - **Ceremony-execution-authority:** Authorize hver step i script; hvis exception: konsulterer Mads inden ad-hoc-ændring
@@ -293,8 +295,8 @@ Se Mads' dokument §3.1 for full procedure-spec. Officer er ansvarlig for:
 |---|---|
 | **Ansvar** | Teknisk ledelse af engineering-teamet (minimum 3 personer: Tech Lead + 1-2 Senior Engineers + 1 SRE/Platform Engineer). Arkitektur-overordnet for cert-lifecycle-tools, ACME/SCEP/EST-servere, certificate-renewal-automation, CRL/OCSP-integration, HSM-bridge-design. **ADVARSEL:** Denne rolle er SEPARAT fra Application Provider (Option B fra FGD). |
 | **Kompetence-krav** | PKI-arkitektur (RFC 3647 CP/CPS struktur), X.509 (RFC 5280), PKCS#11 (v2.40+), NIST SP 800-57 Part 1, ACME (RFC 8555), SCEP (RFC 8894), EST (RFC 7030), HSM-bridge-design (Go, Rust, Python), API-design (REST + OpenAPI 3.1), cert-lifecycle-automation (Certbot, cert-manager, osv.), threat-modeling af PKI-flows. |
-| **SOD-begrænsninger** | **Må IKKE kombineres med:** CA Administrator, HSM-operatør, RA, Application Provider (separat rolle), Application Owner. Engineering Team Lead rapporterer til Application Provider (hvis AP er dedikeret) eller direkte til Mads (hvis ingen AP i fase 1). |
-| **Rapport-linje** | Application Provider (teknisk mentor) eller Mads (compliance-oversight) |
+| **SOD-begrænsninger** | **Må IKKE kombineres med:** CA Administrator, HSM-operatør, RA, Application Provider (separat rolle), Application Owner. Engineering Team Lead rapporterer til Application Provider (teknisk mentor) og til Mads (compliance-oversight). |
+| **Rapport-linje** | Application Provider (teknisk mentor) og Mads (compliance-oversight) |
 | **Model-anbefaling** | `opus` (kompleks arkitektur-design, threat-modeling, HSM-integration-problemløsning) |
 | **Arbejdstid** | Heltid — engineering-teamledelse er kontinuerlig |
 
@@ -383,7 +385,7 @@ Trine leverer kvartalvis PKI audit-rapport til FGD + Mads med sektion:
 | Rolle | Prioritet | Type | Status | Tidslinie | Noter |
 |---|---|---|---|---|---|
 | **CA Administrator** | 1 | Ny | Design → Ansæt | Før projekt-start | Fulltids-driftsleder |
-| **HSM-operatør (FGDCorePKI)** | 1 | Ny / Tillæg | Vurder (Bjarne vs. ny) | Før projekt-start | Deltids-beredskab eller tillæg til Bjarne |
+| **HSM-operatør (FGDCorePKI)** | 1 | Ny / Tillæg | Vurdér (Bjarne vs. ny) | Før projekt-start | Deltids-beredskab eller tillæg til Bjarne |
 | **Key Ceremony Officer** | 2 | Ny / Mads-temporary | Design (fase 1: Mads) | Efter init, før re-keying | Kan være Mads i opstartsfase; adskill senere |
 | **Registration Authority** | 1 | Ny | Design → Ansæt | Før projekt-start | Deltids-mulig hvis volumen lavt |
 | **Engineering Team Lead / PKI Tech Lead** | 1 | Ny | Design → Team-assembly | Før projekt-start | Minimum 3-person team; SEPARAT fra AP (Option B) |
@@ -408,28 +410,34 @@ Trine leverer kvartalvis PKI audit-rapport til FGD + Mads med sektion:
 
 ---
 
-## Ændringer fra v1 til v2
+## Ændringer fra v1 til v2.1
 
-**Mads-blockers indarbejdet:**
+**Mads-blockers indarbejdet (v2):**
 - **B3/G1:** Tilføjet fuld Security Officer-profil som §5. Profilen indeholder: ansvar (second authorizer), kompetence-krav, SOD-begrænsninger, rapport-linje, model-anbefaling. Fase-0-undtagelse dokumenteret (Mads temporært; adskillelse senere). Dual-control-autoriteringspligt eksplicit.
 
-**Mads-conditional indarbejdet:**
+**Mads-conditional indarbejdet (v2):**
 - **C3:** Tilføjet HA-pair-opgaver til HSM-operatør-profilen: "HA-sync: kvartalvis verifikation at wrap-key-replication til sekundær YubiHSM2 er intakt og kan restore; Failover-test: halvårlig test af failover fra primær til sekundær YubiHSM2 under Mads-opsyn; Trine attesterer."
-- **C4:** Tilføjet KCO-afgrænsning til Key Ceremony Officer-profilen: "AP leverer teknisk script-udkast; KCO godkender procedure + autoriserer eksekveringen; Mads godkender samlet script. Hvis uenighed om sikkerhed kan KCO holde ceremony tilbage."
+- **C4:** Tilføjet KCO-afgrænsning til Key Ceremony Officer-profilen (v2): "AP leverer teknisk script-udkast; KCO godkender procedure + autoriserer eksekveringen; Mads godkender samlet script. Hvis uenighed om sikkerhed kan KCO holde ceremony tilbage."
 
-**Dorthe-blockers indarbejdet:**
+**Dorthe-blockers indarbejdet (v2):**
 - **GR-1:** Tilføjet fuld GDPR-sektion til RA-profil med: lawful basis per ansøger-kategori, retention-matrix, data-subject-rettigheder, DPO-notifikations-pligt, art. 9-undtagelse, eskalations-pligt.
 - **GR-2:** Tilføjet DPIA-pligt + lawful-basis-krav for ceremony-video-recording til Key Ceremony Officer-profilen; dokumenteret at 20-årsbevaring kræver DPIA; vidne-samtykke påkrævet.
 
-**Dorthe-conditional indarbejtet:**
+**Dorthe-conditional indarbejtet (v2):**
 - **GR-3:** Tilføjet PII-/EU-residency-note til HSM-operatør Compliance-relateret.
 - **GR-4:** Tilføjet PII-note til CA Administrator audit-trail.
 - **GR-5:** Tilføjet GDPR-cc-bestemmelse til Trine-udvidelse.
 
-**Redaktionelle rettelser:**
-- "Lagd af" → "Lagt af" (linje 356)
+**Redaktionelle rettelser (v2):**
+- "Lagd af" → "Lagt af"
 - Alle "Met" → "Med" i referentiale
 - Stavekontrol: "rapport" (ikke "rapportere" i tabeller)
+
+**Mads FC4-rettelse (v2.1):**
+- **FC4:** Tilføjet eksplicit rolleafgrænsnings-tekst til KCO Ceremony-script-development-afsnittet under "Specifikke opgaver". Teksten specificerer at AP leverer teknisk script-udkast, KCO er proceduriel autoritet, Mads godkender, og KCO kan holde ceremony tilbage ved uenighed. Dette sikrer at afgrænsningen er synlig i KCO-profilens egen tekst, ikke kun i AP-dokumentet.
+
+**Redaktionel fejl udbedret (v2.1):**
+- Linje 296 SOD-begrænsninger (Engineering Team Lead): "Engineering Team Lead rapporterer til Application Provider (hvis AP er dedikeret) eller direkte til Mads (hvis ingen AP i fase 1)" → "Engineering Team Lead rapporterer til Application Provider (teknisk mentor) og til Mads (compliance-oversight)". Denne formulering fjerner den forældede "hvis ingen AP i fase 1"-scenario som ikke eksisterer efter FGDs Option B-beslutning. Rapport-linje-tabel opdateret tilsvarende.
 
 **FGD-beslutninger indarbejdet:**
 - Fjernet alle CABF-referencer; fokus på intern PKI.
@@ -439,13 +447,14 @@ Trine leverer kvartalvis PKI audit-rapport til FGD + Mads med sektion:
 ---
 
 **Lagt af:** Laila (HR-leder)  
-**Dato:** 2026-05-09  
-**Status:** UDKAST v2 profiler — afventer Mads+Dorthe final-check  
-**Næste trin:** Mads+Dorthe final-check → FGD-gennemgang af profiler → Laila designes fulde mandater → Ansæt/aktivér roller per timeline
+**Dato:** 2026-05-09 (v2.1)  
+**Status:** UDKAST v2.1 profiler — Mads FC4-rettelse + redaktionelle fejl implementeret, klar til Mads stikprøvekontrol  
+**Næste trin:** Mads stikprøvekontrol af FC4 KCO-afsnit + redaktionel rettelse → FGD-gennemgang af profiler → Laila designes fulde mandater → Ansæt/aktivér roller per timeline
 
 **Relateret:**
 - Team/Mads/2026-05-09-pki-org-krav.md (Mads' komplet PKI-kravs-dokument)
 - Team/Laila/2026-05-09-udkast-fgdcorepki-application-owner.md
 - Team/Laila/2026-05-09-udkast-fgdcorepki-application-provider.md
 - Team/Mads/2026-05-09-mads-4eyes-fgdcorepki-mandater.md (Mads' 4-eyes review)
+- Team/Mads/2026-05-09-mads-final-check-fgdcorepki-mandater.md (Mads' final-check)
 - Team/Dorthe/2026-05-09-dorthe-4eyes-fgdcorepki-mandater.md (Dorthe's 4-eyes review)
