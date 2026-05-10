@@ -4,8 +4,8 @@ type: dpia-screening
 projekt: FGDCorePKI
 behandlings-aktivitet: OCSP-responder + CRL-distribution via tredjelands-CDN (conditional)
 initieret-af: Dorthe (DPO)
-status: SCREENING-IGANGSAT
-kræver-fuld-dpia: TBD (conditional — afhænger af arkitekturvalg)
+status: LUKKET — INGEN DPIA KRÆVET (Scenario B)
+kræver-fuld-dpia: NEJ
 betinget-af:
   - Arkitekturbeslutning: anvendes tredjelands-CDN (Cloudflare US, Fastly US, Akamai global) til OCSP/CRL distribution?
   - Hvis JA → fuld DPIA påkrævet
@@ -217,5 +217,26 @@ Selv om DPIA-pligt er conditional på arkitekturbeslutning, initieres screening 
 
 **Forfatter:** Dorthe (DPO)
 **Dato igangsat:** 2026-05-09
-**Status:** SCREENING-IGANGSAT — afventer arkitekturbeslutning (F1) som styrende variabel
-**Næste milestone:** Conditional handoff — enten fuld DPIA (Scenario A/C) eller screening-lukning med ROPA-opdatering (Scenario B), trigger ved arkitekturvalg
+**Status:** LUKKET — INGEN DPIA KRÆVET (Scenario B)
+**Næste milestone:** ROPA-opdatering for OCSP/CRL-behandlingsaktivitet med EU-hosting som teknisk sikkerhedsforanstaltning (afventer FGDCorePKI-ROPA-sektion oprettet af Camilla)
+
+---
+
+## Afslutning — FGD-beslutning 2026-05-10
+
+FGD har besluttet EU-only OCSP/CRL-hosting (Scenario B). Ingen tredjelands-dataoverførsel forekommer.
+
+**Konsekvenser:**
+
+- Ingen fuld DPIA nødvendig for denne behandlingsaktivitet
+- Ingen Schrems II-Transfer Impact Assessment (TIA) krævet
+- ROPA-konsekvens: behandlingsaktivitet for OCSP/CRL skal registreres med EU-hosting som teknisk sikkerhedsforanstaltning
+
+**Handling:**
+
+- Næste skridt: AP specificerer EU-residency-krav til OCSP-responder og CRL Distribution Points i arkitektur-dokumentation
+- Dorthe opdaterer ROPA når FGDCorePKI-ROPA-sektionen oprettes (afventer Camilla)
+
+**Lukket af:** Dorthe (DPO)  
+**Dato:** 2026-05-10  
+**FGD-beslutning:** EU-only hosting bekræftet i aktiv session

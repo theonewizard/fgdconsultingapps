@@ -51,3 +51,7 @@ Mandat-strukturen er GO. Disse screeninger er forventede og dokumenterede pre-re
 - Eskalerer direkte hvis Schrems II-TIA-konklusion peger mod art. 36-konsultation
 
 — Dorthe (DPO)
+
+---
+
+**Opdatering 2026-05-10:** DPIA-2 (OCSP/CRL CDN) er lukket — FGD besluttede EU-only hosting (Scenario B). Kun DPIA-1 (ceremony-recording) er fortsat åben.
