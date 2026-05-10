@@ -76,13 +76,32 @@ Se [Team/_konventioner.md](Team/_konventioner.md) for fuldt inbox-flow, eskaleri
 
 ---
 
-## Aktivt projekt
+## Aktive projekter
+
+### Knowlagecentral
 
 **Knowlagecentral** — en Evernote-inspireret videns-app med AI-pipeline, HSM-baseret key management og enterprise compliance-krav (FIPS 140-3, SOC 2 Type II, GDPR).
 
 > Knowlagecentral giver konsulenter og deres kunder et sikkert, AI-beriget noteværktøj — fra råt tekstindhold til struktureret viden, bygget til de brancher der ikke kan gå på kompromis med sikkerhed.
 
 Nøgle-dokumenter:
+
 - Arkitektur: [Team/Poul/2026-05-05-knowlagecentral-analyse-v3.md](Team/Poul/2026-05-05-knowlagecentral-analyse-v3.md)
 - Compliance: [governance/compliance/](governance/compliance/)
 - Governance-policies: [governance/policies/](governance/policies/)
+
+### FGDCorePKI
+
+**FGDCorePKI** — en tre-lags intern PKI-infrastruktur baseret på YubiHSM2, designet med FIPS 140-3-readiness fra dag ét.
+
+> FGDCorePKI leverer FGD Consultings interne certifikat-udstedelse og nøgle-styring som fundament for sikker identitet, signering og kryptering på tværs af interne systemer og kunde-leverancer.
+
+Status: Fase 0 — non-FIPS MVP (FIPS 140-3-ready design).
+
+Compliance: SOC 2 Type II, GDPR, ISO 27001.
+
+Nøgle-dokumenter:
+
+- Application Owner-mandat: [.claude/agents/fgdcorepki-application-owner.md](.claude/agents/fgdcorepki-application-owner.md)
+- Application Provider-mandat: [.claude/agents/fgdcorepki-application-provider.md](.claude/agents/fgdcorepki-application-provider.md)
+- Projekt-arbejdsmappe: `Team/projects/fgdcorepki/` (oprettes når første artefakt skrives)
