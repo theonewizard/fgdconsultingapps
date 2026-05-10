@@ -48,8 +48,7 @@ Rolle-mandater: [.claude/agents/](.claude/agents/)
 │   ├── policies/
 │   ├── compliance/
 │   └── change-requests/
-├── arkiv/                           ← arkiverede dokumenter (spejler hoved-katalog)
-└── skills/                          ← Claude Code skills (superpowers m.fl.)
+└── arkiv/                           ← arkiverede dokumenter (spejler hoved-katalog)
 ```
 
 ---
